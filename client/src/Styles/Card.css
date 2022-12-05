@@ -1,0 +1,18 @@
+.card{
+    background-color: rgba(0, 0, 0, 0.11);
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 15px 25px rgb(140, 201, 241);
+  }
+  
+  .card img{
+    width: 200px;
+    height: 150px;
+    max-width: 200px;
+    max-height: 150px;
+  }
+  

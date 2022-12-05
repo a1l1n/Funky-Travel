@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+.cards{
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+ /*  grid-template-rows: 500px 500px;  */
+  grid-gap: 10px;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* .card{
+  background-color: aliceblue;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.card img{
+  width: 200px;
+  max-width: 200px;
+}
+ */
