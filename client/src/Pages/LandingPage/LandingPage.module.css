@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap');
+
 .landingContainer{
     position: absolute;
     z-index: 1;
@@ -10,8 +13,37 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
+    text-align: left;
     width: 40em;
-    background-color: yellow;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    top: 7em;
+    left: 6em;
+}
+
+.landingFunky {
+    background: linear-gradient(to right, yellow, white);
+    width: 20em;
+    font-size: 2.5em;
+    padding-left: 40px;
+    font-family: 'Monoton', cursive; 
+}
+
+.landingWorld {
+    background: linear-gradient(to right, rgb(241, 150, 166), white);
+    width: 50em;
+    font-size: 1.3em;
+    padding-left: 40px;
+    margin-left: 3em;
+}
+
+.landingPlace {
+    background: linear-gradient(to right, rgb(16, 84, 211), white);
+    color: white;
+    width: 50em;
+    font-size: 1.2em;
+    padding-left: 40px;
+    margin-left: 6em;
 }
 
 .landingImgContainer {
@@ -21,15 +53,53 @@
     flex-direction: row-reverse;
     height: 35em;
     width: 35em;
+    overflow: hidden;
+    cursor: pointer;
     left: 60%;
-    bottom: 150px;
+    bottom: 370px;
     border-radius: 100%;
-    background-color: yellow;
-    background-image: url("./LP-Img.jpeg");
     background-size: cover;
     background-position: center;
+    font-family: 'Staatliches', cursive;
 }
 
-.landingImg { 
-    background-size: cover;
+.landingImgContainer img {
+    position: relative;
+    left: 50%;
+    transition: all 500ms ease-out;
+}
+
+.landingImgText {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+/*     background: rgba(113, 118, 146, 0.884); */
+    background: rgba(255, 255, 0, 0.733);
+    transition: all 500ms ease-out;
+    opacity: 0; 
+    visibility: hidden;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.landingImgContainer:hover > .landingImgText {
+    opacity: 1;
+    visibility: visible;
+    text-decoration: none;
+}
+
+.landingImgContainer:hover > img {
+    transform: scale(1.1);
+}
+
+.landingImgContainer:hover > .landingImgText h2 {
+    margin-top: 1.2em; 
+}
+
+.landingImgText h2 {
+    color: black;
+    font-weight: bolder;
+    transition: all 500ms ease-out;
 }

@@ -6,12 +6,14 @@
     flex-direction: row;
   }
   
-  .navbar .leftSide {
+  .leftSide {
     flex: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     padding-left: 150px;
+    color: white;
+    font-size: 2.5em;
   }
   
   .navbar .leftSide img {

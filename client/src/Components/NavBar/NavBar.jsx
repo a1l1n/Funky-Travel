@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../NavBar/HenryLogo.png';
 import Style from '../NavBar/NavBar.module.css';
 import { SearchBar } from '../SeachBar/SearchBar';
+import { SiYourtraveldottv } from "react-icons/si"
 
 export default function NavBar() {
 return (
     <div className={Style.navbar}>
         <div className={Style.leftSide}>
-            <img src={Logo} />
+            < SiYourtraveldottv/>
         </div>
         <div>
             <SearchBar />
@@ -21,5 +21,3 @@ return (
     </div>
 )
 };
-
-/* 'rightSide' */

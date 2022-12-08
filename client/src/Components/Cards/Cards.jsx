@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../../Styles/Card.css'
 
 // Agregar un botón para que vaya a los detalles -> CARD
 

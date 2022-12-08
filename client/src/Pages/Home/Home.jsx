@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { Cards } from '../../Components/Cards/Cards';
+import { Cards } from '../../Components/Cards/Cards';       
 import {getAllCountries} from '../../Redux/Actions';
 import NavBar from '../../Components/NavBar/NavBar';
 import { Pagination } from '../../Components/Pagination/Pagination';
 import Styles from './Home.module.css'
 
-
-// La imagen de fondo en Home va directamente importada en un div
-// Ej: <div classname = 'headerContainer' style={{backgroundImage : `url(${Nombre})`}}
 export const Home = () => {
   
     const ctrs = useSelector(state => state.countries);
-    console.log("Esto es ctrs: ", ctrs)
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -28,15 +24,9 @@ export const Home = () => {
 
 
     return (
-    <div >
+    <div className={Styles.homeContainer}>
         <NavBar /> 
-        {/* <Cards/>  */}
-        <Pagination 
-                    page = {page}
-                    setPage = {setPage}
-                    totalPages = {totalPages}
-                    /> 
-        <div className='cards'>
+        <div className={Styles.homeCards}>
                 {
                 ctrs?.slice((page - 1) * cardsPerPage, (page - 1) * cardsPerPage + cardsPerPage).map( c => {
                     return (

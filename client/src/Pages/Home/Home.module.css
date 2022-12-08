@@ -1,17 +1,12 @@
-.app{
-    margin: 0;
-    padding: 0
+.homeContainer {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(243, 243, 243, 0.829);
 }
 
-card{
-    width: 300 px;
-    height: 400;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px rgb(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    text-align: center;
-    transition: all 0.25s;
+.homeCards {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 3em;
 }
-
-/* rgb(53, 103, 150) */
