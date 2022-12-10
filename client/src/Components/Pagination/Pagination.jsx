@@ -26,21 +26,21 @@ export const Pagination = ({ page, setPage, totalPages }) => {
     }
 
   return (
-    <div className={Style.pagination}>
-        <button disabled={page === 1 || page <1} onClick={prevPage}>
+    <div className={Style.paginationContainer}>
+        <button className={Style.paginationPrev} disabled={page === 1 || page <1} onClick={prevPage}>
         Prev
         </button>
       
         { pageNumbers && 
           pageNumbers.map((num)=>(
-          <button value={num} onClick={(e)=> handlePage(e)} key={num}
+          <button className={Style.paginationNumber} value={num} onClick={(e)=> handlePage(e)} key={num}
           >
           {num}
       
         </button>
         ))
         }
-        <button disabled={page === totalPages || page > totalPages} onClick={nextPage}>
+        <button className={Style.paginationNext} disabled={page === totalPages || page > totalPages} onClick={nextPage}>
         Next
         </button>
 

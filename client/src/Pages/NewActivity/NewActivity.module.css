@@ -1,0 +1,9 @@
+.actContainer {
+    width: 80%;
+    height: 60%;
+    background-color: pink;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    display: flex;
+}

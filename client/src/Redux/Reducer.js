@@ -18,6 +18,7 @@ const initialState = {
     countries: [],
     countriesActivities: [],
     countryDetail: {},
+    filteredCountries: [],
     activities: []
 }
 
@@ -56,12 +57,12 @@ export default function reducer(state = initialState, actions){
                 activityFilter: null
             }
         case FILTER_BY_CONTINENT:
-            const allCtrs = state.countries;
-            const continentsFilter = actions.payload === 'All' ?
-            allCtrs: allCtrs.filter(c => c.continent === actions.payload)
+            let allCtrs = state.countries;
+            const continentsFilter = actions.payload === 'All' ? allCtrs 
+            : allCtrs.filter(c => c.continent === actions.payload)
             return{
                 ...state,
-                continentFilter: continentsFilter
+                countries: continentsFilter
             }
         case FILTER_BY_ACTIVITY:
             const allAct = state.countries;

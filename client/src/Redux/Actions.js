@@ -97,14 +97,12 @@ export function resetFilter(){
     }
 };
 
-
 export function filterByContinent(payload){
     return{
         type: FILTER_BY_CONTINENT,
         payload
     }
 };
-
 
 export function filterByActivity(payload){
     return{

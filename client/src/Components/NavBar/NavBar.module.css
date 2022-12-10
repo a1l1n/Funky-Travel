@@ -1,19 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap');
+
 .navbar {
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: #121619;
     display: flex;
     flex-direction: row;
   }
   
-  .leftSide {
+  .navbarText {
     flex: 50%;
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 150px;
+    margin-left: 2em;
     color: white;
     font-size: 2.5em;
+  }
+
+  .navbarText h2 {
+    font-family: 'Monoton', cursive; 
+    font-size: 0.8em;
+  }
+
+  .navbarIcon {
+    margin-right: 0.5em;
   }
   
   .navbar .leftSide img {

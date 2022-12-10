@@ -1,0 +1,40 @@
+.cardsContainer {
+    background-color: rgba(255, 255, 255, 0.39);
+    width: 15em;
+    height: 14em;
+    margin-top: 20px;
+}
+
+.cardsContainer:hover {
+    background-color: rgba(255, 255, 255, 0.61);
+}
+
+.cardsImage {
+    height: 45%;
+    margin-top: 1.9em;
+    margin-bottom: 0.5em;
+    transition: all 500ms ease-out;
+}
+
+.cardsImage:hover {
+    max-width: fit-content;
+    transform: scale(1.1);
+}
+
+.cardsText {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: baseline;
+    margin-top: 2em;
+    background-color: rgba(8, 46, 117, 0.733);
+}
+
+.cardsContinent {
+    background-color: rgba(8, 46, 117, 0.733);
+}
+
+.cardsText h3 {
+    margin: 0;
+    text-decoration: none;
+    color: white;
+}

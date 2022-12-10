@@ -1,30 +1,29 @@
+.paginationContainer {
+  display: flex;
+  width: 60%;
+  height: 2em;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.pagination {
-  display: inline-block;
-  } 
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    border: 1px solid #ddd;
-  }
-  
-  .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
-  
-  .pagination a:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  
-  .pagination a:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  } 
+.paginationNumber, .paginationPrev, .paginationNext {
+  color: black;
+  float: left;
+  text-decoration: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.paginationNumber:hover, .paginationPrev:hover, .paginationNext:hover {
+  color: white;
+  background-color: rgba(8, 46, 117, 0.733);
+}
+
+.paginationPrev, .paginationNext {
+  width: 6em;
+}
+
+
