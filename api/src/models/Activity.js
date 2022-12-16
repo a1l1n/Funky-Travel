@@ -27,10 +27,10 @@ module.exports = (sequelize) => {
       type: DataTypes.ENUM('Summer', 'Fall', 'Winter', 'Spring'),
       allowNull: false
     },
-    date: {
+     date: {
       type: DataTypes.DATE,
       allowNull: false
-    }
+    } 
   }, {
     timestamps: false
   });

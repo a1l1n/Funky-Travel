@@ -12,7 +12,7 @@ export const Home = () => {
     
     useEffect(() => {
         dispatch(getAllCountries());
-    }, []);
+    }, [dispatch]);
 
 
 // PAGINATION ---------------------------------------------------

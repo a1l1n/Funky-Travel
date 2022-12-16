@@ -9,8 +9,7 @@ import {
     FILTER_BY_ACTIVITY,
     RESET_ORDERS,
     ORDER_ALPHA_A_Z,
-    ORDER_POPULATION_ASC,
-    ORDER_POPULATION_DESC,
+    ORDER_POPULATION
 } from './Constants';
 
 
@@ -37,7 +36,7 @@ export default function reducer(state = initialState, actions){
         case GET_COUNTRY_ID:
             return{
                 ...state,
-                countries: actions.payload
+                countryDetail: actions.payload
             };
         //---------------------------------------------------------------------
         case  CREATE_NEW_ACTIVITY:
@@ -50,16 +49,17 @@ export default function reducer(state = initialState, actions){
                 activities: actions.payload
             };
         //---------------------------------------------------------------------    
-        case RESET_FILTER:
+/*         case RESET_FILTER:
             return{
                 ...state,
                 continentFilter: null,
                 activityFilter: null
-            }
+            } */
         case FILTER_BY_CONTINENT:
             let allCtrs = state.countries;
             const continentsFilter = actions.payload === 'All' ? allCtrs 
             : allCtrs.filter(c => c.continent === actions.payload)
+            console.log("Esto devuelve continentsFilter: ", continentsFilter)
             return{
                 ...state,
                 countries: continentsFilter
@@ -71,6 +71,36 @@ export default function reducer(state = initialState, actions){
             return{
                 ...state,
                 countriesActivities: activitiesFilter
+            }
+        case ORDER_ALPHA_A_Z: 
+        let sortedCountries = actions.payload === "asc" ?
+        state.countries.sort(function(a,b){
+            if (a.name > b.name) return 1;
+            if (b.name > a.name) return -1;
+            return 0;
+        }) : state.countries.sort(function(a,b){
+            if (a.name > b.name) return -1;
+            if (b.name > a.name) return 1;
+            return 0;
+        })
+        return{
+            ...state,
+            countries: sortedCountries
+        }
+        case ORDER_POPULATION:
+            let sortedPopulation = actions.payload === "asc" ?
+            state.countries.sort(function(a,b){
+                if (a.population < b.population) return 1;
+                if (b.population < a.population) return -1;
+                return 0;
+            }) : state.countries.sort(function(a,b){
+                if (a.population < b.population) return -1;
+                if (b.population < a.population) return 1;
+                return 0;
+            })
+            return {
+                ...state,
+                countries: sortedPopulation
             }
         
         default: return state;

@@ -24,3 +24,10 @@ export const LandingPage = () => {
     </div>
   )
 }
+
+/* Agregar información sobre el funcionamiento de la página:
+
+1) En qué consiste?
+2) Qué podés hacer
+
+*/

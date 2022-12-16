@@ -3,10 +3,15 @@
     width: 15em;
     height: 14em;
     margin-top: 20px;
+    border: 0.5px solid rgb(202, 201, 201);
 }
 
+/* .cardsContainer:hover {
+} */
+
 .cardsContainer:hover {
-    background-color: rgba(255, 255, 255, 0.61);
+    background-color: rgba(255, 255, 255, 0.74); 
+    border: 0.5px solid rgb(0, 68, 255);
 }
 
 .cardsImage {
@@ -25,12 +30,14 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: baseline;
-    margin-top: 2em;
+    margin-top: 2.5em;
     background-color: rgba(8, 46, 117, 0.733);
 }
 
 .cardsContinent {
     background-color: rgba(8, 46, 117, 0.733);
+    font-size: 15px;
+    font-weight: lighter;
 }
 
 .cardsText h3 {

@@ -9,10 +9,8 @@ import {
     FILTER_BY_CONTINENT,
     FILTER_BY_ACTIVITY,
     RESET_ORDERS,
-    ORDER_POPULATION_ASC,
-    ORDER_POPULATION_DESC,
-    ORDER_ALPHA_ASC,
-    ORDER_ALPHA_DESC
+    ORDER_POPULATION,
+    ORDER_ALPHA_A_Z,
 } from './Constants';
 
 // GET EN COUNTRIES : ALL, DETAIL, ID -------------------------------------------
@@ -111,12 +109,22 @@ export function filterByActivity(payload){
     }
 }
 
-// ÓRDENES -> RESET, POPUL ASC, POPUL DESC, ALPH ASC, ALPH DESC ------------------
 
+// ÓRDENES -> RESET, POPULTION, ALPHABETICAL --------------------------
 
+export function sortByName(payload) {
+    console.log("ESto es payload en sortByName: ", payload);
+    return {
+        type: ORDER_ALPHA_A_Z,
+        payload
+    }
+};
 
-/* RESET_ORDERS,
-    ORDER_POPULATION_ASC,
-    ORDER_POPULATION_DESC,
-    ORDER_ALPHA_ASC,
-    ORDER_ALPHA_DESC */ 
+export function sortByPopulation(payload) {
+    console.log("Esto es payload en sortedByPopulation: ", payload)
+    return {
+        type: ORDER_POPULATION,
+        payload
+    }
+}
+

@@ -1,0 +1,98 @@
+.cardBody {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("../../Images/Planisferio.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0.5em;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 91vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: rgba(255, 255, 255, 0.466);
+    border: 1px solid rgb(207, 207, 207);
+    
+}
+
+.cardsTitleImage {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardInformationImage {
+    width: 20em;
+    margin-top: 3em;
+}
+
+.cardInformationImage img {
+    height: 9em;
+    margin-top: 1em;
+}
+
+.cardText {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    width: 93%;
+    height: 45%;
+    margin-top: 3em;
+}
+
+.cardText h2 {
+    text-align: left;
+    font-size: 30px;
+}
+
+.cardLeftInfo, .cardRightInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    width: 30%;
+    height: 16em;
+    margin-top: 3em;
+    font-size: 15px;
+    font-weight:lighter;
+}
+
+.cardLeftInfo h3, .cardRightInfo h3 {
+    border-bottom: 1px solid rgba(16, 84, 211, 0.24);    
+}
+
+.cardActivities h2 {
+    text-align: left;
+    margin-left: 2em;
+}
+
+.cardTopHalf {
+    width: 93%;
+    height: 60%;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.815);
+}
+
+.cardTopHalf h2 {
+    margin-top: 1.5em;
+    margin-left: 4em;
+    text-align: left;
+}
+
+.cardBottomHalf {
+    width: 93%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:  rgba(122, 147, 190, 0.267);
+}

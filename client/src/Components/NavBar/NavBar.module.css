@@ -2,7 +2,7 @@
 
 .navbar {
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: #121619;
     display: flex;
     flex-direction: row;
@@ -80,6 +80,23 @@
     width: 70px;
     margin: 5px;
   }
+
+  .navbarCountries {
+    font-size: 15px;
+  }
+  
+  .navbarActivities {
+    font-size: 16px;
+  }
+
+  .navbarNew {
+    font-size: 17px;
+  }
+
+  .navbarAbout {
+    font-size: 18px;
+  }
+
   @media only screen and (max-width: 900px) {
     .navbar .rightSide a {
       width: 70px;
