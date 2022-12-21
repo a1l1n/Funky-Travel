@@ -17,12 +17,9 @@ async function getAllCountries(req, res){
             console.log('Llega hasta acá?')
             return res.status(200).json(cntr)
         } else {
-    // ESTO SÍ FUNCIONA
             res.status(404).send('Countries not found');
         }
     } else {
-    // ESTO TAMBIÉN FUNCIONA
-        console.log('o llega hasta acá?')
         return res.status(200).json(info);
     }
 } catch (error) {

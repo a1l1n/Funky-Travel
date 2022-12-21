@@ -5,3 +5,6 @@ export default function Activities () {
     <div>Activities</div>
   )
 }
+
+/* UTILIZAR MATERIAL UI -> ACORDEON, PARA MOSTRAR CADA ACTIVIDAD 
+CON UN DESPLEGABLE PARA VER LOS DETALLES DE CADA UNA */

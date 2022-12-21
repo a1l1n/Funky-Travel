@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
-import { BsCheck2Square } from "react-icons/bs";
+import React from 'react';
+import { useSelector} from 'react-redux';
+import { Link } from 'react-router-dom';
 import Styles from "./Card.module.css";
-import Image from "../../Pages/LandingPage/LP-Img.jpeg";
 
 // Acá viene importada toda la información de country + la info traída por actividades
+// HAY QUE AGREGAR UN LINK HACIA EL HOME
 
 export const Card = ({ id }) => {
   const country = useSelector(state => state.countryDetail);
-  console.log("Esto es country: ", country)
-  
+  console.log("Esto es coutry: ", country)
 
   return (
     <div className={Styles.cardBody}>
@@ -35,33 +34,29 @@ export const Card = ({ id }) => {
 
           <div className={Styles.cardBottomHalf}>
             <div className={Styles.cardActivities}>
-              <h2>Activities</h2>
-              <div>
+              <h2>Activities: </h2>
+              <div  className={Styles.cardActivitiesContainer}>
                 {
-                  country.activities?.lenght === 0 ? country.activities.map((a) => {
-                    return (
-                      <h3>{a}</h3>
-                    )})
-                  : <div><h3>No activities yet</h3> <button>+ New Activity</button> </div>
-                } 
-                
+                  country.activities?.length === 0 ? 
+                  <div className={Styles.cardNoActivities}>
+                    <h3>No activities yet</h3> 
+                    <Link to="/newActivity" style={{ textDecoration: 'none' }}>
+                      + New Activity
+                    </Link> 
+                  </div> 
+                  : country.activities?.map((act) => (
+                    <div className={Styles.cardActivitiesText}>
+                      <span><h3>Activity: </h3>{act.name}</span>
+                      <span><h3>Duration (hr): </h3>{act.duration}</span>
+                      <span><h3>Dificulty: </h3>{act.dificulty}</span>
+                      <span><h3>Season: </h3>{act.season}</span>
+                    </div>
+                  ))           
+                }  
               </div> 
             </div>
           </div>
-      
       </div>
     </div>
   )
 }
-
-
-/* 
-          id: e.cca3,                  //OBJETO de la API : cca3: código
-          name: e.name.common,
-          continent: e.continents,
-          capital: e.capital, 
-          subregion: e.subregion,
-          area: e.area,
-          population: e.population, // ARGENTINA info filtrada de la API ---> GUARDAR info en la db
-          flagimg: e.flags.png,
- */

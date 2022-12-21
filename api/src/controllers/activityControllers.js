@@ -28,8 +28,9 @@ const { Country, Activity } = require('../db')
 
 async function getActivities(req,res){
     try {
-        let activities = await Activity.findAll({attributes: ["name", "id"]});
-        //console.log('Actividades guardadas: ', activities)
+        let activities = await Activity.findAll({
+            include: Country  
+            });
         if(activities.length){
           return res.status(200).send(activities)
         } else {

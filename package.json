@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@mui/x-date-pickers": "^5.0.11",
+    "date-fns": "^2.29.3",
+    "moment": "^2.29.4",
     "react-icons": "^4.7.1",
     "sweetalert2": "^11.6.15"
   }
