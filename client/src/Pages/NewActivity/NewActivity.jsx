@@ -75,7 +75,9 @@ export const NewActivity = () => {
               <div><h1> Create a new Activity</h1><div>
               <form onSubmit={ (e) => handleOnSubmit(e)}>
                 <div className={Style.actActivity}>
-                  <label form="name">Activity: </label>
+                  <div className={Style.actLabel}>
+                    <label form="name">Activity: </label>
+                  </div>
                   <input onChange={handleOnChange} 
                   type="text" 
                   name="name" 
@@ -85,7 +87,9 @@ export const NewActivity = () => {
                 </div>
 
                 <div className={Style.actDificulty}>
-                  <label form="dificulty">Dificulty: </label>
+                  <div className={Style.actLabel}>
+                    <label form="dificulty">Dificulty: </label>
+                  </div>
                   <label>
                   <input onChange={e => handleCheckBox(e)} type="radio" name='dificulty' value='1'/>
                   1 </label>
@@ -109,16 +113,20 @@ export const NewActivity = () => {
 
       {/* AVERIGUAR CÓMO AGREGAR NUMEROS DE TIPO HORARIO ------------------------------------------------------------------------------- */}
                 <div className={Style.actDuration}>
-                  <label form='duration'>Duration: </label>
+                  <div className={Style.actLabel}>
+                    <label form='duration'>Duration: </label>
+                  </div>
                   <input onChange={handleOnChange} 
-                  type="number" 
+                  type="time" 
                   name="duration" 
                   value={input.duration}
                   />
                 </div>
       {/* ------------------------------------------------------------------------------------------------------------------------------- */}
                 <div className={Style.actSeason}>
-                  <label form='season'>Season: </label>
+                  <div className={Style.actLabel}>
+                    <label form='season'>Season: </label>
+                  </div>
                   <label>
                   <input onChange={e => handleCheckBox(e)} type="radio" name="season" value='Summer'/>
                   Summer</label>
@@ -138,29 +146,34 @@ export const NewActivity = () => {
 
       {/*  FALTA AGREGAR COSAS ACÁ --------------------------------------------------------------------------------------------------------------- */}
               <div className={Style.actCountry}>
-                <label form='country'>Country: </label>
+                <div className={Style.actLabel}>
+                  <label form='country'>Country: </label>
+                </div>
                 <input onChange={e => handleSelect(e)} type="text" name="country"/>
               </div>
 
       {/*   CALENDAR ----------------------------------------------------------------------------------------------------------------------------- */}
-                <div className={Style.actCalendar}>
-                  <Calendar />
+              <div className={Style.actCalendar}>
+                <div className={Style.actLabel}>
+                  <label>Pick a Date: </label>
                 </div>
+                <input  type="date" name="date" min="21/12/2022"/>
+              </div>
 
       {/*   SUBMIT BUTTON ------------------------------------------------------------------------------------------------------------------------ */}
 
-                <div className={Style.actButton}>
-                  <button  type="submit">
-                    Create Activity
+                <div className={Style.actButtonDiv}>
+                  <button type="submit" className={Style.actButton}>
+                    <span>Create Activity</span>
                   </button>
                 </div>
             
               </form>
             </div>
-            <div className={Style.actRight}>
-
-            </div>
         </div>
+        </div>
+        <div className={Style.actRight}>
+          
         </div>
       </div>
     </div>
@@ -181,4 +194,10 @@ Date Range with disabled navigation shown
     />
   );
 };
+*/
+
+/* 
+                <div className={Style.actCalendar}>
+                  <Calendar />
+                </div>
 */

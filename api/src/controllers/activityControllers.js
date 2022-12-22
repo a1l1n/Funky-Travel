@@ -5,6 +5,12 @@ const { Country, Activity } = require('../db')
     const { countryName, name, dificulty, duration, season, date } = req.body
     console.log("Activities / Esto entra por body: ", req.body)
     if(!name || !dificulty || !duration || !season  || !date  || !countryName) return res.status(404).send('Please, all fields must be completed')
+    /* 
+    1 -> separar horas de minutos -> "1"-":"-"30" -> split = "1", "30"
+    2 -> parsear ambos elementos -> parseInt
+    3 -> aplicar la lógica para transformar todo a minutos
+    4 -> asignar el resultado a la propiedad duration
+    */
     try {
         const newAct = await Activity.create({
            name: name, 

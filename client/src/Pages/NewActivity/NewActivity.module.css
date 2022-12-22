@@ -5,11 +5,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 0.5em;
+    
 } 
 
 .actContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 65%;
     height: 90vh;
     margin-left: auto;
@@ -20,36 +21,87 @@
     border: 1px solid rgb(207, 207, 207);
 }
 
-.actLeft {
-    background-color: pink;
+.actLeft, .actRight {
     height: 90%;
+    margin-top: 2.5em;
+    text-align: left;
+}
+
+.actLeft {
     width: 60%;
+    margin-left: 2em;
+    background-color: rgba(255, 255, 255, 0.815);
+    
 }
 
-.actActivity {
-    background-color: antiquewhite;
+.actLeft h1 {
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    color: rgba(9, 47, 117, 0.815); 
 }
 
-.actDificulty {
-    background-color: aqua;
+.actRight {
+    width: 33%;
+    background-image: url("../../Images/Stamps.jpg");
+    opacity: 0.6;
+    background-size: cover;
+    background-position: center;
 }
 
-.actDuration {
-    background-color: aquamarine;
+.actLabel {
+    width: 100px;
+    margin-left: 2em;
+    margin-right: 1em;
 }
 
-.actSeason {
-    background-color: azure;
+.actLeft label {
+    margin-right: 1em;
 }
 
-.actCountry {
-    background-color: beige;
-}
-
-.actCalendar {
-    background-color: bisque;
+.actActivity, .actDificulty, .actDuration, .actSeason, .actCountry, .actCalendar {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4em;
+    margin-top: 1em;
 }
 
 .actButton {
-/*     background-color: blanchedalmond; */
+    position: relative; 
+    border: 1px solid rgb(207, 207, 207);
+    background-color: rgba(255, 255, 255, 0.466);;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    top: 5.5em;
+    left: 31%;
+    transition: .3s ease all;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.actButton::after {
+    content: "";
+    width: 1px;
+    height: 1px;
+    background: none;
+    position: absolute;
+    z-index: 1; 
+    top: 50%;
+    left: 50%;
+    transition: .3s ease-in-out all;
+    border-radius: 100px;
+    transform-origin: center;
+}
+
+.actButton:hover::after {
+    transform: scale(400);
+    background: rgba(255, 255, 3, 0.856);
+}
+
+.actButton span {
+    position: relative;
+    z-index: 2;
 }
