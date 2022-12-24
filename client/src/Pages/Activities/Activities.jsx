@@ -1,8 +1,9 @@
 import React from 'react';
+import body from "../Home/Home.module.css"
 
 export default function Activities () {
   return (
-    <div>Activities</div>
+    <div className={body.homeContainer}>Activities</div>
   )
 }
 

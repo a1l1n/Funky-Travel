@@ -4,7 +4,6 @@ import { getAllCountries, createNewActivity } from '../../Redux/Actions';
 import { useHistory } from 'react-router-dom';
 import Style from "./NewActivity.module.css";
 import Swal from 'sweetalert2';
-import Calendar from './Calendar';
 
 export const NewActivity = () => {
   const countries = useSelector(state => state.countries);
@@ -83,6 +82,7 @@ export const NewActivity = () => {
                   name="name" 
                   value={input.name}
                   placeholder='Add an activity'
+                  className={Style.actInput}
                   />
                 </div>
 
@@ -120,6 +120,7 @@ export const NewActivity = () => {
                   type="time" 
                   name="duration" 
                   value={input.duration}
+                  className={Style.actTime}
                   />
                 </div>
       {/* ------------------------------------------------------------------------------------------------------------------------------- */}
@@ -149,7 +150,7 @@ export const NewActivity = () => {
                 <div className={Style.actLabel}>
                   <label form='country'>Country: </label>
                 </div>
-                <input onChange={e => handleSelect(e)} type="text" name="country"/>
+                <input onChange={e => handleSelect(e)} type="text" name="country" className={Style.actInput}/>
               </div>
 
       {/*   CALENDAR ----------------------------------------------------------------------------------------------------------------------------- */}
@@ -157,7 +158,7 @@ export const NewActivity = () => {
                 <div className={Style.actLabel}>
                   <label>Pick a Date: </label>
                 </div>
-                <input  type="date" name="date" min="21/12/2022"/>
+                <input type="date" name="date" min="21/12/2022" className={Style.actDate}/>
               </div>
 
       {/*   SUBMIT BUTTON ------------------------------------------------------------------------------------------------------------------------ */}

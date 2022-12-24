@@ -4,7 +4,7 @@ import { Cards } from '../../Components/Cards/Cards';
 import {getAllCountries} from '../../Redux/Actions';
 import { Pagination } from '../../Components/Pagination/Pagination';
 import { Filters } from '../../Components/Filters/Filters';
-import Styles from './Home.module.css'
+import Styles from './Home.module.css';
 
 export const Home = () => {
     const ctrs = useSelector(state => state.countries);

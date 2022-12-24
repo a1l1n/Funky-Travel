@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     duration: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     season: {
@@ -28,7 +28,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
      date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false
     } 
   }, {

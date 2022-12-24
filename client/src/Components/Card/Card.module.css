@@ -9,7 +9,7 @@
 
 .cardContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 65%;
     height: 92vh;
     margin-left: auto;
@@ -18,18 +18,17 @@
     margin-bottom: 2em;
     background-color: rgba(255, 255, 255, 0.466);
     border: 1px solid rgb(207, 207, 207);
-    
 }
 
 /* TOP - HALF ------------------------------------------------- */
 .cardTopHalf {
-    width: 93%;
-    height: 60%;
+    width: 1200em;
+    height: 90%;
     margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgba(9, 47, 117, 0.815); 
-    background-color: rgba(255, 255, 255, 0.815);
+    margin-left: 1.5em;
+    color: rgba(9, 47, 117, 0.815);
+    background-color: pink;
+    /* background-color: rgba(255, 255, 255, 0.815); */
 }
 
 .cardTopHalf h2 {
@@ -37,48 +36,38 @@
     margin-left: 2em;
     text-align: left;
 }
+
 .cardText {
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-evenly;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     width: 93%;
-    height: 45%;
-    margin-top: 3em;
-}
-
-.cardText h2 {
-    text-align: left;
-    font-size: 30px;
-}
-
-.cardsTitleImage {
-    display: flex;
-    flex-direction: column;
+    height: 80%;
+    margin-top: 2em;
+    background-color: blue;
 }
 
 .cardInformationImage {
     width: 20em;
-    margin-top: 3em;
+    background-color: beige;
 }
 
 .cardInformationImage img {
     height: 9em;
-    margin-top: 1em;
+/*     margin-top: 1em; */
 }
 
-.cardLeftInfo, .cardRightInfo {
+.cardInfo {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     text-align: start;
     width: 30%;
-    height: 16em;
     margin-top: 3em;
     font-size: 15px;
     font-weight:lighter;
+    background-color: aqua;
 }
 
 .cardLeftInfo h3, .cardRightInfo h3 {
@@ -86,13 +75,13 @@
     color: rgba(9, 47, 117, 0.699);   
 }
 
-/* BOTTOM - HALF --------------------------------------------- */
-.cardBottomHalf {
-    width: 93%;
-    height: 32%;
-    margin-left: auto;
-    margin-right: auto;
-/*     background-color: rgba(255, 255, 255, 0.658); */ 
+/* RIGHT --------------------------------------------- */
+.cardRigth {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    margin-top: 2em;
+    margin-right: 1.5em;
     background-color:  rgba(122, 147, 190, 0.267); 
 }
 
