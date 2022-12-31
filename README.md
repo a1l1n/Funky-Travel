@@ -1,5 +1,6 @@
 
-## Funky Travel [en proceso]
+## Funky Travel 
+[:hammer_and_wrench: en proceso :hammer_and_wrench:]
 
 Esta aplicación te permite ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.com/) y a partir de ella poder, entre otras cosas:
 
