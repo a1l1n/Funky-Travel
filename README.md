@@ -23,5 +23,3 @@ Así mismo permite crear una lista de actividades asociadas a los países que vi
 
 - [ ] React
 - [ ] Redux
-
-## Frontend

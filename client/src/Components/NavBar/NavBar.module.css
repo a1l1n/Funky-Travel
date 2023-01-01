@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 .navbar {
-    width: 100%;
-    height: 60px;
-    background-color: #121619;
+    width: 99vw;
+    height: 70px;
+    background-color: #121619e8;
     display: flex;
     flex-direction: row;
   }
@@ -27,75 +28,44 @@
     margin-right: 0.5em;
   }
   
-  .navbar .leftSide img {
-    width: 50px;
-  }
-  
   .navbar .rightSide {
-    flex: 50%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 50%;
+    height: 100%;
   }
   
-  .navbar a {
-    color: white;
+  .navBar_link {
+    position: relative;
+    color: rgba(245, 245, 245, 0.863);
     text-decoration: none;
     margin: 20px;
-  }
-  
-  .navbar .rightSide button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .navbar .rightSide svg {
-    font-size: 40px;
-  }
-  
-  .navbar #open {
-    padding-left: 0px;
-  }
-  .navbar #open img {
-    display: none;
-  }
-  
-  .navbar #close img {
-    display: inherit;
-  }
-  
-  .navbar #open .hiddenLinks {
-    display: inherit;
-    margin-left: 30px;
-  }
-  
-  .navbar #close .hiddenLinks {
-    display: none;
-  }
-  
-  .navbar #open a {
-    width: 70px;
-    margin: 5px;
+    font-family: 'Sora', sans-serif;
   }
 
-  .navbarCountries {
-    font-size: 15px;
-  }
-  
-  .navbarActivities {
-    font-size: 16px;
-  }
+ .navBar_link:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
 
-  .navbarNew {
-    font-size: 17px;
-  }
+.navBar_link:hover::after {
+  width: 100%;
+}
 
-  .navbarAbout {
-    font-size: 18px;
-  }
+.navBar_link:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+
+  /* RESPONSIVE -------------------------------------------------- */
 
   @media only screen and (max-width: 900px) {
     .navbar .rightSide a {
@@ -130,3 +100,11 @@
       display: none;
     }
   }
+
+/* RESPONSIVE ----------------------------------------------- */
+/* AVERIGUAR CÓMO SE HACE UN MENÚ HAMBURGUESA --------------- */
+  @media screen and (max-width: 860px) {}
+
+
+
+

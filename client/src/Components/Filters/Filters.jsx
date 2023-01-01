@@ -38,7 +38,9 @@ function populationSort(e){
       <div className={Styles.filtersSearchbar}>
         <SearchBar />
       </div>
+        <h2>Order by: </h2>
       <select className={Styles.filtersDropdown} onChange={(e) => handleContinent(e)}>
+        <option value="Order">Continents</option>
         <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="North America">North America</option>
@@ -49,19 +51,19 @@ function populationSort(e){
         <option value="Oceania">Oceania</option>
       </select>
       <select className={Styles.filtersDropdown} onChange={(e) => handleSort(e)}>
-        <option value="Order">Alphabetical Order</option>
+        <option value="Order">Alphabetical</option>
         <option value="asc">A to Z</option>
         <option value="desc">Z to A</option>
       </select>
       <select className={Styles.filtersDropdown} onChange={(e) => populationSort(e)}>
-        <option value="Order">Order by Population</option>
+        <option value="Order">Population</option>
         <option value="asc">↑ population</option>
         <option value="desc">↓ population</option>
       </select>
       <select className={Styles.filtersDropdown}>
         <option value="activities">Activities</option>
       </select>
-      <button>Clean</button>
+      <button className={Styles.filters_button}>Clean</button>
     </div>
   )
 }

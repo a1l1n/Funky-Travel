@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
 .actBody {
     min-height: 100vh;
     width: 100%;
-    background-image: url("../../Images/Planisferio.png");
-    background-repeat: no-repeat;
-    background-size: cover;
     padding-top: 0.5em;
-    
 } 
 
 .actContainer {
@@ -55,6 +54,9 @@
     flex-direction: row;
     margin-left: 4em;
     margin-top: 1.5em;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    color: rgb(95, 94, 94);
 }
 
 /* LABELS --------------------------------------------------------------- */

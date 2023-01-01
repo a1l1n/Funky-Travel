@@ -11,10 +11,10 @@ return (
             <h2>Funky Travel</h2>
         </div>
         <div className={Style.rightSide}>
-            <Link className={Style.navbarCountries} to='/countries'> Countries </Link>
-            <Link className={Style.navbarActivities} to="/activities">Your Activities</Link>
-            <Link className={Style.navbarNew} to='/newActivity'> Create Activity </Link>
-            <Link className={Style.navbarAbout} to='About'> About </Link> 
+            <Link className={Style.navBar_link} to='/countries'> Countries </Link>
+            <Link className={Style.navBar_link} to="/activities">Your Activities</Link>
+            <Link className={Style.navBar_link} to='/newActivity'> Create Activity </Link>
+            <Link className={Style.navBar_link} to='About'> About </Link> 
         </div>
     </div>
 )

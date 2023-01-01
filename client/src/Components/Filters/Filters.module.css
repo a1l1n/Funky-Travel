@@ -5,11 +5,18 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 0.3em;
-    width: 100%;
+    width: 99vw;
     height: 2em;
-    background-color: rgb(238, 238, 124);
+    background-color: rgba(238, 238, 124, 0.781);
     padding-top: 0.5em;
-    bottom: 0.5em;
+}
+
+.filtersContainer h2 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 1rem;
+    margin-left: 3rem;
+    color: rgb(75, 75, 75);
 }
  
 .filtersDropdown {
@@ -22,6 +29,17 @@
     margin-bottom: auto;
 } 
 
-.filtersSearchbar {
-    margin-right: 17em;
+.filters_button {
+    height: 2em;
+    width: 5em;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.74);
+    color: white;
+    font-weight: 520;
+    cursor: pointer;
+}
+
+.filters_button:hover {
+    background-color: black;
 }

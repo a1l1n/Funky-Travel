@@ -6,13 +6,9 @@
     border: 0.5px solid rgb(202, 201, 201);
 }
 
-/* .cardsContainer:hover {
-} */
-
 .cardsContainer:hover {
     background-color: rgba(255, 255, 255, 0.74); 
     border: none;
-    /* border: 0.5px solid rgb(0, 68, 255); */
 }
 
 .cardsImage {
@@ -32,6 +28,7 @@
     flex-direction: column-reverse;
     justify-content: baseline;
     margin-top: 2.5em;
+    max-height: 45px;
     background-color: rgba(8, 46, 117, 0.733);
 }
 
@@ -45,4 +42,5 @@
     margin: 0;
     text-decoration: none;
     color: white;
+    font-weight: 500;
 }

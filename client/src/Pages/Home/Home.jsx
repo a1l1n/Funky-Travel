@@ -40,13 +40,13 @@ export const Home = () => {
                     })
                 }
         </div>
-            <div className={Styles.homePagination}>
+{            <div className={Styles.homePagination}>
              <Pagination 
                 page = {page}
                 setPage = {setPage}
                 totalPages = {totalPages}
              />  
-            </div>
+            </div>}
         </div>
   )
 };
@@ -56,7 +56,8 @@ export const Home = () => {
 COSAS QUE ME FALTAN TERMINAR DE HACER
 1) FILTROS -> 
 2) FORMULARIO ------------------> en proceso
-3) PAGINADO  -------------------> listo!
+3) PAGINADO  -------------------> que marque la Current Page!
+3.1) PAGINADO ------------------> cuando buscás un país, que automáticamente se renderice la página 1
 4) CARD -> DETALLE
 5) CARDS -> DETALLES
 6) CSS
