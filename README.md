@@ -27,8 +27,8 @@ Así mismo permite crear una lista de actividades asociadas a los países que vi
 
 |Landing Page |Home section|
 |-------------| --------------|
-|[Landing](./readmeImages/modelFunky.png) |![Home](./readmeImages/Home.png)
+|![Landing](./readmeImages/modelFunky.png) |![Home](./readmeImages/Home.png)
 
 |Activity Form |
 |--------------|
-|[Form](./readmeImages/Form.png)
+|![Form](./readmeImages/Form.png)
