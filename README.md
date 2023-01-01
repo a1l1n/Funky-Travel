@@ -6,7 +6,6 @@ Esta aplicación te permite ver información de  distintos paises utilizando la 
 
 - Buscar países
 - Filtrarlos / Ordenarlos
-- Crear actividades turísticas
 - Enlace directo con el artículo correspondiente de Wikipedia
 
 Así mismo permite crear una lista de actividades asociadas a los países que visites o tengas pensado visitar, como para organizarlas en función del recorrido turístico a elección. Las secciones de Actividades cuentan con: 
@@ -24,3 +23,12 @@ Así mismo permite crear una lista de actividades asociadas a los países que vi
 
 - [ ] React
 - [ ] Redux
+
+
+|Landing Page |Home section|
+|-------------| --------------|
+|[Landing](./readmeImages/modelFunky.png) |![Home](./readmeImages/Home.png)
+
+|Activity Form |
+|--------------|
+|[Form](./readmeImages/Form.png)
