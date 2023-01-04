@@ -8,6 +8,7 @@ import Styles from './Home.module.css';
 
 export const Home = () => {
     const ctrs = useSelector(state => state.countries);
+    const filtereds = useSelector(state => state.filteredCountries);
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -27,7 +28,18 @@ export const Home = () => {
         <Filters />
         <div className={Styles.homeCards}>
                 {
-                ctrs?.slice((page - 1) * cardsPerPage, (page - 1) * cardsPerPage + cardsPerPage).map( c => {
+                filtereds?.length ? filtereds.slice((page - 1) * cardsPerPage, (page - 1) * cardsPerPage + cardsPerPage).map(c => {
+                    return (
+                        <Cards 
+                        key={c.id}
+                        id={c.id}
+                        name={c.name} 
+                        continent={c.continent}
+                        flagimg = {c.flagimg}
+                        />
+                        )
+                    })
+                : ctrs?.slice((page - 1) * cardsPerPage, (page - 1) * cardsPerPage + cardsPerPage).map( c => {
                     return (
                         <Cards 
                         key={c.id}

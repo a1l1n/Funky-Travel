@@ -26,7 +26,7 @@ export default function reducer(state = initialState, actions){
         case GET_ALL_COUNTRIES:
             return {
                 ...state,
-                countries: actions.payload
+                countries: [...actions.payload]
             };
         case GET_COUNTRY_NAME:
             return{
@@ -62,7 +62,7 @@ export default function reducer(state = initialState, actions){
             console.log("Esto devuelve continentsFilter: ", continentsFilter)
             return{
                 ...state,
-                countries: continentsFilter
+                filteredCountries: continentsFilter
             }
         case FILTER_BY_ACTIVITY:
             const allAct = state.countries;
@@ -75,17 +75,17 @@ export default function reducer(state = initialState, actions){
         case ORDER_ALPHA_A_Z: 
         let sortedCountries = actions.payload === "asc" ?
         state.countries.sort(function(a,b){
-            if (a.name > b.name) return 1;
-            if (b.name > a.name) return -1;
+            if (a.id > b.id) return 1;
+            if (b.id > a.id) return -1;
             return 0;
         }) : state.countries.sort(function(a,b){
-            if (a.name > b.name) return -1;
-            if (b.name > a.name) return 1;
+            if (a.id > b.id) return -1;
+            if (b.id > a.id) return 1;
             return 0;
         })
         return{
             ...state,
-            countries: sortedCountries
+            filteredCountries: sortedCountries
         }
         case ORDER_POPULATION:
             let sortedPopulation = actions.payload === "asc" ?
@@ -100,7 +100,7 @@ export default function reducer(state = initialState, actions){
             })
             return {
                 ...state,
-                countries: sortedPopulation
+                filteredCountries: sortedPopulation
             }
         
         default: return state;
