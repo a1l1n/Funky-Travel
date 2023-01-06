@@ -16,7 +16,7 @@ export const NewActivity = () => {
     duration: "",
     season: "",
     date: "",
-    countries: []
+    countryName: ""
   });
   
 
@@ -33,7 +33,7 @@ export const NewActivity = () => {
     e.preventDefault();
       setInput({
         ...input,
-        countries: [e.target.value]
+        countryName: e.target.value
       })
   };
 
@@ -57,10 +57,8 @@ export const NewActivity = () => {
       duration: '',
       season: '',
       date: "",
-      countries: []})
+      countryName: ""})
     };
-    /* history.push('/countries')
- */
   useEffect(() =>{
     dispatch(getAllCountries())
   }, []);
@@ -158,7 +156,11 @@ export const NewActivity = () => {
                 <div className={Style.actLabel}>
                   <label>Pick a Date: </label>
                 </div>
-                <input type="date" name="date" min="21/12/2022" className={Style.actDate}/>
+                <input  onChange={handleOnChange} 
+                type="date" 
+                name="date" 
+                min="21/12/2022" 
+                className={Style.actDate}/>
               </div>
 
       {/*   SUBMIT BUTTON ------------------------------------------------------------------------------------------------------------------------ */}

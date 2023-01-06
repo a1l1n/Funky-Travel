@@ -22,6 +22,7 @@ const { Country, Activity } = require('../db')
         const response = await newAct.addCountry(countryList)
       return res.status(200).send('Activity created');
     } catch (error) {
+        console.log("Saltó el catch del Post")
         res.send(error)
     }
 }; 

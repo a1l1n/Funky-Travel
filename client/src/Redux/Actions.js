@@ -33,13 +33,12 @@ export function getCountryByName(name){
     return async function(dispatch){
         try {
             const response = await axios.get(`http://localhost:3001/countries?name=${name}`);
-            console.log(response)
             return dispatch({
                 type: GET_COUNTRY_NAME,
                 payload: response.data
             })
         } catch (error) {
-            console.log(error)
+            console.log("Error en Redux/Actions", error)
         }
     }
 };

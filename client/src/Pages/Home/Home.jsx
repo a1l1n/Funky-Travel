@@ -20,7 +20,7 @@ export const Home = () => {
 
     const [page, setPage] = useState(1);
     const [cardsPerPage] = useState(10);
-    const totalPages = Math.ceil(ctrs.length / cardsPerPage);
+    const totalPages = filtereds.length? Math.ceil(filtereds.length / cardsPerPage) : Math.ceil(ctrs.length / cardsPerPage);
 
 
     return (

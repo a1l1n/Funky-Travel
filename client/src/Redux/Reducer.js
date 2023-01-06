@@ -74,33 +74,33 @@ export default function reducer(state = initialState, actions){
             }
         case ORDER_ALPHA_A_Z: 
         let sortedCountries = actions.payload === "asc" ?
-        state.countries.sort(function(a,b){
+        state.filteredCountries.sort(function(a,b){
             if (a.id > b.id) return 1;
             if (b.id > a.id) return -1;
             return 0;
-        }) : state.countries.sort(function(a,b){
+        }) : state.filteredCountries.sort(function(a,b){
             if (a.id > b.id) return -1;
             if (b.id > a.id) return 1;
             return 0;
         })
         return{
             ...state,
-            filteredCountries: sortedCountries
+            filteredCountries: [...sortedCountries]
         }
         case ORDER_POPULATION:
             let sortedPopulation = actions.payload === "asc" ?
-            state.countries.sort(function(a,b){
+            state.filteredCountries.sort(function(a,b){
                 if (a.population < b.population) return 1;
                 if (b.population < a.population) return -1;
                 return 0;
-            }) : state.countries.sort(function(a,b){
+            }) : state.filteredCountries.sort(function(a,b){
                 if (a.population < b.population) return -1;
                 if (b.population < a.population) return 1;
                 return 0;
             })
             return {
                 ...state,
-                filteredCountries: sortedPopulation
+                filteredCountries: [...sortedPopulation]
             }
         
         default: return state;

@@ -36,8 +36,7 @@ export const Pagination = ({ page, setPage, totalPages }) => {
           <button className={Style.paginationNumber} value={num} onClick={(e)=> handlePage(e)} key={num}
           >
           {num}
-      
-        </button>
+          </button>
         ))
         }
         <button className={Style.paginationNext} disabled={page === totalPages || page > totalPages} onClick={nextPage}>

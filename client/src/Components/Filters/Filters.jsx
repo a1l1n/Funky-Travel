@@ -9,7 +9,6 @@ cuando estos valores cambien */
 export const Filters = () => {
 const dispatch = useDispatch();
 const countries = useSelector(state => state.countries);
-const [ order, setOrder ] = useState("");
 
 useEffect(() => {
   dispatch(getAllCountries());
@@ -24,13 +23,12 @@ function handleContinent(e){
 function handleSort(e){
   e.preventDefault();
   dispatch(sortByName(e.target.value));
-  setOrder(e.target.value);
+
 }
 
 function populationSort(e){
   e.preventDefault();
-  dispatch(sortByPopulation(e.target.value));
-  setOrder(e.target.value);
+  dispatch(sortByPopulation(e.target.value))
 };
 
   return (

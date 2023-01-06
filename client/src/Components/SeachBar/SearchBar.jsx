@@ -1,19 +1,26 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { HiOutlineSearchCircle } from "react-icons/hi"
-import { getCountryByName } from '../../Redux/Actions';
-
+import { getAllCountries, getCountryByName } from '../../Redux/Actions';
 import Style from './SearchBar.module.css';
+import Swal from 'sweetalert2';
 
 export const SearchBar = () => {
     const [search, setSearch] = useState(''); 
     const dispatch = useDispatch();
+    const countries = useSelector(state => state.countries);
 
+    function isThere (search) {
+      const found = countries.find(c => c.name.toLowerCase() == search.toLowerCase());
+      if (!found) Swal.fire("We cannot find that country, please try again");
+    }
+    
     function countrySubmit(e){
-        e.preventDefault()
-        dispatch(getCountryByName(search))
-        setSearch('')
+      e.preventDefault();
+      isThere(search);
+      dispatch(getCountryByName(search)) 
+      setSearch('')
     };
 
   return (
