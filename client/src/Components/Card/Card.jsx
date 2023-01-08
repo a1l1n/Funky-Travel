@@ -2,9 +2,10 @@ import React from 'react';
 import { useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 import Styles from "./Card.module.css";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { IoIosArrowBack } from "react-icons/io";
 import convert from "../Functions";
 
-// HAY QUE AGREGAR UN LINK HACIA EL HOME
 
 export const Card = ({ id }) => {
   const country = useSelector(state => state.countryDetail);
@@ -13,37 +14,49 @@ export const Card = ({ id }) => {
     <div className={Styles.cardBody}>
       <div className={Styles.cardContainer}>
         <div className={Styles.cardTopHalf}>
-            <h2>Country Information</h2>
           <div className={Styles.cardText}>
-              <div className={Styles.cardInformationImage}><img src={country.flagimg}/></div>
             
             <div className={Styles.cardInfo}>
-              <span><h3>Name </h3>{country.name}</span>
-              <span><h3>Capital </h3>{country.capital}</span>
-              <span><h3>Continent </h3>{country.continent}</span> 
-              <span><h3>Subregion</h3>{country.subregion}</span> 
-              <span><h3>Area (km2)</h3>{country.area}</span> 
-              <span><h3>Population</h3>{country.population}</span>
+              <div className={Styles.cardInformationImage}>
+                <div className={Styles.cardInformationTitle}>
+                  <h2>{country.name}</h2>
+                  <h3>Country Information</h3>
+                </div>
+                <img src={country.flagimg}/>
+              </div>
+              
+              <div className={Styles.cardInformationSpans}>
+                <span><div className={Styles.cardInfoDiv}><h3>Capital</h3></div>{country.capital}</span>
+                <span><div className={Styles.cardInfoDiv}><h3>Continent </h3></div>{country.continent}</span> 
+                <span><div className={Styles.cardInfoDiv}><h3>Subregion</h3></div>{country.subregion}</span> 
+                <span><div className={Styles.cardInfoDiv}><h3>Area (km2)</h3></div>{country.area?.toLocaleString()}</span> 
+                <span><div className={Styles.cardInfoDiv}><h3>Population</h3></div>{country.population?.toLocaleString()}</span>
+              </div>
+              <a className={Styles.cardInfoLink} href={`https://en.wikipedia.org/wiki/${country.name}`}target="_blank"><AiOutlinePlusCircle className={Styles.cardIcon}/> Info</a>
             </div>
+          </div>
+
+          <div className={Styles.cardLinks}>
+            <Link className={Styles.cardBackLink} to="/countries"><IoIosArrowBack />Go back</Link>
           </div>
         </div>
 
           <div className={Styles.cardRigth}>
             <div className={Styles.cardActivities}>
-              <h2>Activities: </h2>
+              <h2>Activities </h2>
               <div  className={Styles.cardActivitiesContainer}>
                 {
                   country.activities?.length === 0 ? 
                   <div className={Styles.cardNoActivities}>
                     <h3>No activities yet</h3> 
-                    <Link to="/newActivity" style={{ textDecoration: 'none' }}>
-                      + New Activity
+                    <Link to="/newActivity" className={Styles.cardNoActivitiesLink}>
+                      <AiOutlinePlusCircle /> New Activity
                     </Link> 
                   </div> 
                   : country.activities?.map((act) => (
                     <div className={Styles.cardActivitiesText}>
                       <span><h3>{act.name}</h3></span>
-                      <span><h3>Season: </h3>{act.season}</span>
+                      <Link to="/activities" className={Styles.cardActLink}><AiOutlinePlusCircle className={Styles.cardIcon}/> Info</Link>
                     </div>
                   ))           
                 }  

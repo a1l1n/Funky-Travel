@@ -5,6 +5,7 @@ import { SiYourtraveldottv } from "react-icons/si"
 
 export default function NavBar() {
 return (
+
     <div className={Style.navbar}>
         <div className={Style.navbarText}>
             <SiYourtraveldottv className={Style.navbarIcon}/>
@@ -15,7 +16,7 @@ return (
             <Link className={Style.navBar_link} to="/activities">Your Activities</Link>
             <Link className={Style.navBar_link} to='/newActivity'> Create Activity </Link>
             <Link className={Style.navBar_link} to='About'> About </Link> 
-        </div>
+        </div> 
     </div>
 )
 };

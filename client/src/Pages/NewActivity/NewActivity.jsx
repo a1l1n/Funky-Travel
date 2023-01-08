@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+/* import { useNavigate } from 'react-router-dom'; */
 import { getAllCountries, createNewActivity } from '../../Redux/Actions';
-import { useHistory } from 'react-router-dom';
 import Style from "./NewActivity.module.css";
 import Swal from 'sweetalert2';
 
 export const NewActivity = () => {
-  const countries = useSelector(state => state.countries);
   const dispatch = useDispatch();
-  const history = useHistory();
-
+/*   const navigate = useNavigate(); */
+  const countries = useSelector(state => state.countries);
+  const [errors, setErrors] = useState({})
   const [input, setInput] = useState({
     name: "",
     dificulty: "",
@@ -26,6 +26,10 @@ export const NewActivity = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
+    setErrors(validate({
+      ...input,
+      [e.target.name]: e.target.value
+    }))
   };
 
   // Countries list -------------------------------------------------
@@ -39,10 +43,11 @@ export const NewActivity = () => {
 
   // Checkbox handler ------------------------------------------------
   const handleCheckBox = (e) =>{
-   /*  e.preventDefault(); */
+   const { name, value } = e.target;
+   e.preventDefault(); 
    setInput({
      ...input,
-     [e.target.name]: e.target.value
+     [name]: value
     })
   };
     
@@ -62,6 +67,20 @@ export const NewActivity = () => {
   useEffect(() =>{
     dispatch(getAllCountries())
   }, []);
+
+  /* Validate ------------------------------------------------------ */
+
+  function validate(input) {
+    let errors = {};
+    let found = countries.find(c => c.name === input.country);
+    console.log(found)
+
+    if (!found) {
+      errors.country = "A valid country name is required"
+    }
+    
+    return errors;
+  }
   
   
   return (
@@ -81,6 +100,7 @@ export const NewActivity = () => {
                   value={input.name}
                   placeholder='Add an activity'
                   className={Style.actInput}
+                  required
                   />
                 </div>
 
@@ -119,6 +139,7 @@ export const NewActivity = () => {
                   name="duration" 
                   value={input.duration}
                   className={Style.actTime}
+                  required
                   />
                 </div>
       {/* ------------------------------------------------------------------------------------------------------------------------------- */}
@@ -149,6 +170,7 @@ export const NewActivity = () => {
                   <label form='country'>Country: </label>
                 </div>
                 <input onChange={e => handleSelect(e)} type="text" name="country" className={Style.actInput}/>
+                {errors.countryName}
               </div>
 
       {/*   CALENDAR ----------------------------------------------------------------------------------------------------------------------------- */}
@@ -159,8 +181,8 @@ export const NewActivity = () => {
                 <input  onChange={handleOnChange} 
                 type="date" 
                 name="date" 
-                min="21/12/2022" 
-                className={Style.actDate}/>
+                className={Style.actDate}
+                required/>
               </div>
 
       {/*   SUBMIT BUTTON ------------------------------------------------------------------------------------------------------------------------ */}

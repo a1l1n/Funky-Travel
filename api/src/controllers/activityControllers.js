@@ -3,8 +3,27 @@ const { Country, Activity } = require('../db')
 
  async function newActivity(req, res){
     const { countryName, name, dificulty, duration, season, date } = req.body
-    console.log("Activities / Esto entra por body: ", req.body)
+
     if(!name || !dificulty || !duration || !season  || !date  || !countryName) return res.status(404).send('Please, all fields must be completed')
+    // Chequear si es válido el param Country
+    const countryList= await Country.findOne({
+        where:{
+            name: countryName
+        }
+    });
+
+    if (!countryList) return res.status(404).send("Not a valid country")
+
+    //Chequear si la fecha no está repetida
+    const checkDate = await Activity.findAll({
+        where: {
+            date: date
+        },
+        include: Country
+    });
+    console.log("Esto es checkDate: ", checkDate)
+
+/*     if (checkDate) return res.status(404).send("") */
 
     try {
         const newAct = await Activity.create({
@@ -14,12 +33,7 @@ const { Country, Activity } = require('../db')
            season: season,
            date: date 
         });
-        const countryList= await Country.findAll({
-            where:{
-                name: countryName
-            }
-        });
-        const response = await newAct.addCountry(countryList)
+      const response = await newAct.addCountry(countryList)
       return res.status(200).send('Activity created');
     } catch (error) {
         console.log("Saltó el catch del Post")
@@ -28,7 +42,6 @@ const { Country, Activity } = require('../db')
 }; 
 
 async function getActivities(req, res){
-
     try {
         let activities = await Activity.findAll({
             include: Country  

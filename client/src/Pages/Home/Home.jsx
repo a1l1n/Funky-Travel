@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { Cards } from '../../Components/Cards/Cards';       
-import {getAllCountries} from '../../Redux/Actions';
+import { getAllCountries } from '../../Redux/Actions';
 import { Pagination } from '../../Components/Pagination/Pagination';
 import { Filters } from '../../Components/Filters/Filters';
 import Styles from './Home.module.css';
@@ -63,15 +63,13 @@ export const Home = () => {
   )
 };
 
-// Acá entra el formulario con las opciones en "Dificulty", "Season" y filtro para países
-/* 
+/*
 COSAS QUE ME FALTAN TERMINAR DE HACER
-1) FILTROS -> 
-2) FORMULARIO ------------------> en proceso
+1) FILTROS -> clear state
 3) PAGINADO  -------------------> que marque la Current Page!
 3.1) PAGINADO ------------------> cuando buscás un país, que automáticamente se renderice la página 1
-4) CARD -> DETALLE
-5) CARDS -> DETALLES
-6) CSS
-7) Loading & 404 Error page *fuck*
+4) BACK --------> que no te permita agregar una actividad con fecha repetida
+5) ACTIVITIES SECTION
+6) ABOUT SECTION
+7) CONTROL DEL FORMULARIO DE CREACIÓN DE ACTIVIDADES
 */
