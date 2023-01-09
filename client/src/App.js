@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Home } from './Pages/Home/Home';
 import { LandingPage } from './Pages/LandingPage/LandingPage';
 import { Country } from './Pages/Country/Country';
@@ -13,12 +13,14 @@ function App() {
   return (
     <div className="App">
       <NavBar /> 
-      <Route exact path = '/' component={LandingPage}/>
-      <Route exact path='/countries' component={Home} />
-      <Route path='/countries/:id' component={Country}/>
-      <Route path="/newActivity" component={NewActivity}/>
-      <Route path='/activities' component={Activities}/>  
-      <Route path="/about" component={About}/>    
+      <Routes>
+        <Route exact path = '/' element={<LandingPage />}/>
+        <Route exact path='/countries' element={<Home />} />
+        <Route path='/countries/:id' element={<Country />}/>
+        <Route path="/newActivity" element={<NewActivity />}/>
+        <Route path='/activities' element={<Activities />}/>  
+        <Route path="/about" element={<About />}/>    
+      </Routes>
     </div>
   );
 }

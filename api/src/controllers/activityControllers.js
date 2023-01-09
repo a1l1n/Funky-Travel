@@ -11,19 +11,8 @@ const { Country, Activity } = require('../db')
             name: countryName
         }
     });
-
+    
     if (!countryList) return res.status(404).send("Not a valid country")
-
-    //Chequear si la fecha no está repetida
-    const checkDate = await Activity.findAll({
-        where: {
-            date: date
-        },
-        include: Country
-    });
-    console.log("Esto es checkDate: ", checkDate)
-
-/*     if (checkDate) return res.status(404).send("") */
 
     try {
         const newAct = await Activity.create({
@@ -46,7 +35,7 @@ async function getActivities(req, res){
         let activities = await Activity.findAll({
             include: Country  
             });
- 
+
         if(activities.length){
           return res.status(200).send(activities)
         } else {

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-/* import { useNavigate } from 'react-router-dom'; */
+import { useNavigate } from 'react-router-dom';
 import { getAllCountries, createNewActivity } from '../../Redux/Actions';
 import Style from "./NewActivity.module.css";
 import Swal from 'sweetalert2';
 
 export const NewActivity = () => {
   const dispatch = useDispatch();
-/*   const navigate = useNavigate(); */
+  const navigate = useNavigate();
   const countries = useSelector(state => state.countries);
-  const [errors, setErrors] = useState({})
   const [input, setInput] = useState({
     name: "",
     dificulty: "",
@@ -26,10 +25,6 @@ export const NewActivity = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
-    setErrors(validate({
-      ...input,
-      [e.target.name]: e.target.value
-    }))
   };
 
   // Countries list -------------------------------------------------
@@ -54,6 +49,15 @@ export const NewActivity = () => {
   // Handle Submit ---------------------------------------------------
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    
+    /* Check if the country really exist ---------------------------- */
+    let countryCheck = countries.find(c => c.name.toLowerCase() === input.countryName.toLocaleLowerCase());
+    if (!countryCheck) return Swal.fire("A valid country is required")
+    
+    /* Check if it's a valid date ------------------------------------ */
+
+
+    /* Dispatch action ----------------------------------------------- */
     dispatch(createNewActivity(input));
     Swal.fire('Your activity has been successfully created!')
     setInput({
@@ -63,24 +67,12 @@ export const NewActivity = () => {
       season: '',
       date: "",
       countryName: ""})
+      navigate("/countries");
     };
+
   useEffect(() =>{
     dispatch(getAllCountries())
   }, []);
-
-  /* Validate ------------------------------------------------------ */
-
-  function validate(input) {
-    let errors = {};
-    let found = countries.find(c => c.name === input.country);
-    console.log(found)
-
-    if (!found) {
-      errors.country = "A valid country name is required"
-    }
-    
-    return errors;
-  }
   
   
   return (
@@ -170,7 +162,6 @@ export const NewActivity = () => {
                   <label form='country'>Country: </label>
                 </div>
                 <input onChange={e => handleSelect(e)} type="text" name="country" className={Style.actInput}/>
-                {errors.countryName}
               </div>
 
       {/*   CALENDAR ----------------------------------------------------------------------------------------------------------------------------- */}
@@ -204,25 +195,3 @@ export const NewActivity = () => {
     </div>
   )
 }
-
-/* 
-Date Range with disabled navigation shown
-() => {
-  const [startDate, setStartDate] = useState(null);
-  return (
-    <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-      minDate={new Date()}
-      maxDate={addMonths(new Date(), 5)}
-      showDisabledMonthNavigation
-    />
-  );
-};
-*/
-
-/* 
-                <div className={Style.actCalendar}>
-                  <Calendar />
-                </div>
-*/
