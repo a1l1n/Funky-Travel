@@ -9,7 +9,9 @@ import {
     FILTER_BY_ACTIVITY,
     RESET_ORDERS,
     ORDER_ALPHA_A_Z,
-    ORDER_POPULATION
+    ORDER_POPULATION,
+    UPDATE_ACTIVITY, 
+    DELETE_ACTIVITY
 } from './Constants';
 
 
@@ -18,7 +20,8 @@ const initialState = {
     countriesActivities: [],
     countryDetail: {},
     filteredCountries: [],
-    activities: []
+    activities: [],
+    filteredActivities: {}
 }
 
 export default function reducer(state = initialState, actions){
@@ -47,6 +50,14 @@ export default function reducer(state = initialState, actions){
             return{
                 ...state,
                 activities: actions.payload
+            };
+        case UPDATE_ACTIVITY:
+            return {
+                ...state
+            };
+        case DELETE_ACTIVITY:
+            return {
+                ...state
             };
         //---------------------------------------------------------------------    
 /*         case RESET_FILTER:
@@ -83,6 +94,7 @@ export default function reducer(state = initialState, actions){
             if (b.id > a.id) return 1;
             return 0;
         })
+
         return{
             ...state,
             filteredCountries: [...sortedCountries]

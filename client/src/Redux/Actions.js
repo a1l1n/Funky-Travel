@@ -11,6 +11,8 @@ import {
     RESET_ORDERS,
     ORDER_POPULATION,
     ORDER_ALPHA_A_Z,
+    UPDATE_ACTIVITY,
+    DELETE_ACTIVITY,
 } from './Constants';
 
 // GET EN COUNTRIES : ALL, DETAIL, ID -------------------------------------------
@@ -57,7 +59,7 @@ export function getCountryId(id){
     }
 };
 
-// GET Y POST DE ACTIVITIES -----------------------------------------------------    FALTA CHEQUEAR SI FUNCIONA
+// GET, POST, UPDATE y DELETE DE ACTIVITIES -----------------------------------------------------    FALTA CHEQUEAR SI FUNCIONA
 export function createNewActivity(payload){
     return async function (dispatch){
         try {
@@ -85,6 +87,33 @@ export function getActivity(){
         }
     }
 };
+
+export function updateActivity(id, payload) {
+    return async function (dispatch) {
+        try {
+            const updateData = await axios.put(`http://localhost:3001/activities?id=${id}`, payload);
+            return dispatch({
+                type: UPDATE_ACTIVITY,
+                payload: updateData.data
+            })
+        } catch (error) {
+            console.log("Se chingó el update", error);
+        }
+    }
+};
+
+export function deleteActivity(id) {
+    return async function(dispatch) {
+        try {
+            await axios.delete(`http://localhost:3001/activities?id=${id}`)
+            return dispatch({
+                type: DELETE_ACTIVITY
+            })
+        } catch (error) {
+            console.log("Se chingó el delete ", error);
+        }
+    }
+}
 
 
 // FILTERS -> RESET, CONTINENT, ACTIVITY --------------------------------------
