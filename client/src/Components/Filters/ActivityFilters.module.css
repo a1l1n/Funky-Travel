@@ -1,0 +1,101 @@
+
+.filtersContainer, .filters_selects {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.3em;
+    padding-top: 0.5em;
+    width: 98.9vw;
+    height: 2.5em;
+    background-color: rgba(238, 238, 124, 0.781);
+}
+
+.filters_selects select {
+        height: 2em;
+        width: 150px;
+        margin: 0.5em auto;
+        border: none;
+        color: rgb(43, 42, 42);
+        
+}
+
+.actfilters_modal_button {
+    width: 300px;
+    height: 100px;
+    visibility: hidden;
+}
+
+/* RESPONSIVE -------------------------------------------------------------- */
+@media screen and (max-width: 360px) {
+    .filtersContainer, .filters_selects  {
+        flex-direction: column;
+        width: 100vw;
+        margin: 0
+    }
+
+    .filters_selects {
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    .filters_selects_modal h3 {
+        font-size: 23px;
+    }
+
+    .filters_selects_modal {
+        position: absolute;
+        z-index: 3;
+        height: 600px;
+        width: 100VW;
+        top: 3.3em;
+        padding-top: 2em;
+        background-image: linear-gradient(rgba(238, 238, 124, 0.945), rgb(252, 252, 236));
+        visibility: visible;
+    }
+
+    .filters_selects_modal select{
+        display: flex;
+        height: 2.5em;
+        width: 200px;
+        margin: 0.5em auto;
+        border: none;
+        color: rgb(43, 42, 42);
+    }
+
+    .actfilters_modal_button {
+        position: absolute;
+        margin-top: 4.4em;
+        visibility: visible;
+    }
+
+    .actfilters_modal_button button, .actfilters_close_modal_button button {
+        height: 2em;
+        width: 150px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        color: rgba(0, 0, 0, 0.774);
+        background-color: rgba(238, 238, 124, 0.781);
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .actfilters_close_modal {
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .actfilters_modal_button button {
+        transition: 0.3s;
+    }
+
+    .actfilters_modal_button button:hover {
+        background-color: rgba(255, 255, 62, 0.719);
+    }
+
+    .actfilters_close_modal_button {
+        margin-top: 3em;
+    }
+}

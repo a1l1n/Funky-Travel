@@ -56,8 +56,10 @@ export default function reducer(state = initialState, actions){
                 ...state
             };
         case DELETE_ACTIVITY:
+            let activities = state.activities
             return {
-                ...state
+                ...state,
+                activities: [...activities]
             };
         //---------------------------------------------------------------------    
 /*         case RESET_FILTER:
@@ -94,7 +96,6 @@ export default function reducer(state = initialState, actions){
             if (b.id > a.id) return 1;
             return 0;
         })
-
         return{
             ...state,
             filteredCountries: [...sortedCountries]
