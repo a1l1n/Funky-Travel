@@ -58,9 +58,6 @@ function populationSort(e){
         <option value="asc">↑ population</option>
         <option value="desc">↓ population</option>
       </select>
-      <select className={Styles.filtersDropdown}>
-        <option value="activities">Activities</option>
-      </select>
       <button className={Styles.filters_button}>Clean</button>
     </div>
   )

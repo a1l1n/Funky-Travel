@@ -5,13 +5,9 @@ export default function ActivityFilters() {
     const [ modal, setModal ] = useState(false);
 
     function showFilters(state) {
+        console.log("modal", modal)
         setModal(state);
     }
-/* 
-    function hideFilters() {
-        setModal(false)
-    }
- */
 
     return (
         <div className={Style.filtersContainer}> 
@@ -53,7 +49,7 @@ export default function ActivityFilters() {
                     <option value="Spring">Spring</option>
                 </select>
                 
-                <div className={modal === true ? Style.actfilters_close_modal_button : Style.actfilters_close_modal}>
+                <div className={Style.actfilters_close_modal_button}>
                     <button onClick={() => showFilters(false)}>Apply</button>
                 </div>
             </div>
