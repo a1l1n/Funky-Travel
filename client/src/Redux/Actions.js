@@ -3,16 +3,20 @@ import {
     GET_ALL_COUNTRIES,
     GET_COUNTRY_NAME,
     GET_COUNTRY_ID,
-    CREATE_NEW_ACTIVITY,
     GET_ACTIVITY,   
     RESET_FILTER,
     FILTER_BY_CONTINENT,
-    FILTER_BY_ACTIVITY,
     RESET_ORDERS,
     ORDER_POPULATION,
     ORDER_ALPHA_A_Z,
     UPDATE_ACTIVITY,
     DELETE_ACTIVITY,
+    ACT_FILTER_SEASON,
+    ACT_ORDER_A_Z,
+    ACT_ORDER_DIFICULTY,
+    ACT_ORDER_DATE,
+    ACT_COUNT_ORDER_A_Z,
+    ACT_ORDER_DIFFICULTY
 } from './Constants';
 
 // GET EN COUNTRIES : ALL, DETAIL, ID -------------------------------------------
@@ -115,7 +119,6 @@ export function deleteActivity(id) {
     }
 }
 
-
 // FILTERS -> RESET, CONTINENT, ACTIVITY --------------------------------------
 
 export function resetFilter(){
@@ -131,15 +134,7 @@ export function filterByContinent(payload){
     }
 };
 
-export function filterByActivity(payload){
-    return{
-        type:FILTER_BY_ACTIVITY,
-        payload
-    }
-}
-
-
-// ÓRDENES -> RESET, POPULTION, ALPHABETICAL --------------------------
+// COUNTRIES: ÓRDENES -> RESET, POPULATION, ALPHABETICAL --------------------------
 
 export function sortByName(payload) {
     console.log("ESto es payload en sortByName: ", payload);
@@ -155,5 +150,44 @@ export function sortByPopulation(payload) {
         type: ORDER_POPULATION,
         payload
     }
+};
+
+// ACTIVITIES: FILTERS -> BY SEASON -----------------------------------------------
+export function activitiesBySeason(payload) {
+    return {
+        type: ACT_FILTER_SEASON,
+        payload
+    }
 }
+
+// ACTIVITIES: ÓRDENES -> ALPHABETICAL, DIFFICULTY, DATE --------------------------
+export function activitySortByName(payload) {
+    return {
+        type: ACT_ORDER_A_Z,
+        payload
+    }
+};
+
+export function countriesSortByName(payload) {
+    return {
+        type: ACT_COUNT_ORDER_A_Z,
+        payload
+    }
+}
+
+export function activitySortDifficulty(payload) {
+    return {
+        type: ACT_ORDER_DIFFICULTY, 
+        payload
+    }
+};
+
+export function activitySortDate(payload) {
+    return {
+        type: ACT_ORDER_DATE, 
+        payload
+    }
+};
+
+
 

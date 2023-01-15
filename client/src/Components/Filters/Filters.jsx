@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { filterByContinent, sortByName, sortByPopulation, getAllCountries, getActivity } from "../../Redux/Actions";
 import { SearchBar } from '../SeachBar/SearchBar';
@@ -23,7 +23,6 @@ function handleContinent(e){
 function handleSort(e){
   e.preventDefault();
   dispatch(sortByName(e.target.value));
-
 }
 
 function populationSort(e){

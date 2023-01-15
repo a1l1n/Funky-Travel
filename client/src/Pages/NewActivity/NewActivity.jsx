@@ -98,7 +98,7 @@ export const NewActivity = () => {
 
                 <div className={Style.actDificulty}>
                   <div className={Style.actLabel}>
-                    <label form="dificulty">Dificulty: </label>
+                    <label form="dificulty">Difficulty: </label>
                   </div>
                   <label>
                   <input onChange={e => handleCheckBox(e)} type="radio" name='dificulty' value='1'/>
