@@ -14,6 +14,7 @@ import {
     ACT_ORDER_A_Z,
     ACT_COUNT_ORDER_A_Z,
     ACT_ORDER_DIFFICULTY,
+    ACT_ORDER_DATE,
     RESET_FILTER,
     RESET_ORDERS,
 } from './Constants';
@@ -168,6 +169,22 @@ export default function reducer(state = initialState, actions){
         return {
             ...state,
             filteredActivities: [...sortedDifficulty]
+        };
+        case ACT_ORDER_DATE:
+        let dates = state.activities;
+        let sortedDates = actions.payload === "asc" ?
+        dates.sort(function(a,b) {
+            if (a.date > b.date) return 1;
+            if (b.date > a.date) return -1;
+            return 0;
+        }) : dates.sort(function(a,b) {
+            if (a.date > b.date) return -1;
+            if (b.date > a.date) return 1;
+            return 0;
+        })
+        return {
+            ...state,
+            filteredActivities: [...sortedDates]
         }
         //---------------------------------------------------------------------    
 /*         case RESET_FILTER:
