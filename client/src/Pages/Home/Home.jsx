@@ -65,11 +65,15 @@ export const Home = () => {
 
 /*
 COSAS QUE ME FALTAN TERMINAR DE HACER
-1) FILTROS -> clear state
-3) PAGINADO  -------------------> que marque la Current Page!
-3.1) PAGINADO ------------------> cuando buscás un país, que automáticamente se renderice la página 1
-4) BACK --------> que no te permita agregar una actividad con fecha repetida
-5) ACTIVITIES SECTION
-6) ABOUT SECTION
-7) CONTROL DEL FORMULARIO DE CREACIÓN DE ACTIVIDADES
+LandingPage:         RESPONSIVE
+NavBar:              RESPONSIVE
+Home - Filtros:      clearButton
+                     RESPONSIVE
+Home - Paginado:     que marque la Current Page!
+                     cuando buscás un país, que automáticamente se renderice la página 1
+
+Actividades:         UPDATE
+                     UPDATE - RESPONSIVE
+Create Activities:   RESPONSIVE
+About:               TODO
 */

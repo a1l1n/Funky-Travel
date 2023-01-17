@@ -1,14 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 .activities_container {
-    width: 98vw;
+    width: 100vw;
+    height: 80vh;
     margin: 0;
 }
 
+.activities_no_act {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 10em;
+    width: 35em;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color:rgba(255, 255, 255, 0.39);
+    color: rgb(83, 83, 83);
+}
+
+.activities_no_act_h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8em;
+    width: 34em;
+    background-color: rgba(255, 255, 255, 0.911); 
+}
+
 .activities_shortCard_container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
     width: 80vw;
+    height: 40vh;
     gap: 10px;
     margin: 1.5em auto;
     padding: 2rem 0rem;
@@ -17,7 +39,9 @@
 } 
 
 .activities_shortCardContainer {
-    background-color:rgba(255, 255, 255, 0.39);;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color:rgba(255, 255, 255, 0.39);
     width: 250px;
     height: 280px;
     border: 1px solid rgba(128, 128, 128, 0.281);
@@ -123,6 +147,15 @@
         margin: 1em auto;
         padding: 1em 0em;
     }
+
+    .activities_no_act {
+        width: 25em;
+        margin-top: 1em;
+    }
+
+    .activities_no_act_h3 {
+        width: 23em;
+    }
 } 
 
 @media screen and (max-width: 600px) {
@@ -134,6 +167,18 @@
         height: 100%;
         gap: 1em;
         margin: 1em auto
+    }
+
+    .activities_no_act {
+        width: 15em;
+        height: 15em;
+        margin-bottom: 12em;
+    }
+
+    .activities_no_act_h3 {
+        height: 13em;
+        width: 13em;
+        background-color: rgba(255, 255, 255, 0.911); 
     }
 
     .activities_shortCardContainer {

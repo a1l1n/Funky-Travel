@@ -12,7 +12,7 @@ export const LandingPage = () => {
           <div className={Style.landingPlace}><h1>In One Place</h1></div>
         </div>
         
-        <div className={Style.landingImgContainer}>
+         <div className={Style.landingImgContainer}>
             <img src={image} alt=""/> 
             <div className={Style.landingImgText}>
               <Link to='countries' style={{ textDecoration: 'none' }}> 
@@ -20,7 +20,7 @@ export const LandingPage = () => {
                 <h2>Started!</h2>
               </Link>
             </div>
-        </div>
+        </div> 
     </div>
   )
 }
