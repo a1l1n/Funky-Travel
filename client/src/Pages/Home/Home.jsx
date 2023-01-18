@@ -65,8 +65,7 @@ export const Home = () => {
 
 /*
 COSAS QUE ME FALTAN TERMINAR DE HACER
-LandingPage:         RESPONSIVE
-NavBar:              RESPONSIVE
+-------------------------------------
 Home - Filtros:      clearButton
                      RESPONSIVE
 Home - Paginado:     que marque la Current Page!

@@ -2,14 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 .navbar {
-    width: 98.9vw;
-    height: 70px;
+    width: 100vw;
     background-color: #121619e8;
+  }
+  
+  /* NAVBAR -------------------------------------- */
+  .navigation, .modal_navigation {
+    height: 70px;
     display: flex;
     flex-direction: row;
   }
-  
-  .navbarText {
+
+  .navbarText, .modalText {
     flex: 50%;
     height: 100%;
     display: flex;
@@ -19,16 +23,16 @@
     font-size: 2.5em;
   }
 
-  .navbarText h2 {
+  .navbarText h2, .modalText h2 {
     font-family: 'Monoton', cursive; 
     font-size: 0.8em;
   }
 
-  .navbarIcon {
+  .navbarIcon, .modalIcon {
     margin-right: 0.5em;
   }
   
-  .navbar .rightSide {
+  .navbar .rightSide, .modal_rightSide {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,46 +68,118 @@
   transition: 0.3s;
 }
 
+/* MODAL NAVBAR ------------------------------------------------- */
+.modal_navigation {
+  display: none;
+}
+
+.modalIcon_menu {
+  margin: auto;
+  padding: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.modalIcon_menu_icon {
+  font-size: 40px;
+}
 
   /* RESPONSIVE -------------------------------------------------- */
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1140px) {
+    .navbarText {
+      flex: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 950px) {
+    .modal_rightSide_container {
+      position: absolute;
+      z-index: 3;
+      top: 70px;
+      height: 45vh;
+      padding-bottom: 110%;
+      width: 100vw; 
+      background-color: #121619e8;
+    }
+    
+    .modal_rightSide {
+      display: flex;
+      flex-direction: column;
+      font-size: 22px;
+      font-weight: 550;
+    }
+
+    .navigation {
+      display: none;
+    }
+
+    .modalText {
+      display: flex;
+    } 
+
+    .modalIcon_menu {
+      margin-right: 3em;
+    }
+
+    .modal_navigation {
+      display: flex;
+    }
+    
     .navbar .rightSide a {
       width: 70px;
     }
     .navbar .leftSide {
-      padding-left: 50px;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .navbar .rightSide a {
-      display: none;
-    }
-  
-    .navbar .rightSide {
-      justify-content: flex-end;
-      padding-right: 50px;
-    }
-  
-    .navbar .rightSide button {
-      display: inherit;
-    }
-  }
-  
-  @media only screen and (min-width: 600px) {
-    .navbar .rightSide button {
-      display: none;
-    }
-  
-    .hiddenLinks {
-      display: none;
+      padding-left: 10px;
     }
   }
 
-/* RESPONSIVE ----------------------------------------------- */
-/* AVERIGUAR CÓMO SE HACE UN MENÚ HAMBURGUESA --------------- */
-  @media screen and (max-width: 860px) {}
+  @media only screen and (max-width: 550px) {
+    .modalText {
+      margin-left: 1em;
+    }
+    
+    .modalText h2 {
+      font-size: 28px;
+    }
+
+    .modalIcon_menu {
+      margin-right: 1em;
+    }
+  }
+
+/* MOBIL ----------------------------------------------------- */
+  @media screen and (max-width: 420px) {
+    .modalText {
+      margin-left: 1em;
+    }
+
+    .modal_rightSide_container {
+      position: absolute;
+      z-index: 3;
+      top: 70px;
+      height: 45vh;
+      padding-bottom: 110%;
+      width: 100vw; 
+      background-color: #121619e8;
+    }
+    
+    .modal_rightSide {
+      display: flex;
+      flex-direction: column;
+      font-size: 22px;
+      font-weight: 550;
+    }
+
+    .modalText h2 {
+      font-size: 20px;
+    }
+
+    .modalIcon {
+      margin-right: 0.3em;
+      font-size: 45px; 
+    }
+  }
 
 
 
