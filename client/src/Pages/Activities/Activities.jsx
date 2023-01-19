@@ -60,8 +60,8 @@ export default function Activities () {
              <div className={Styles.activities_no_act}>
                <div className={Styles.activities_no_act_h3}><h3>No activities yet</h3></div>
              </div>
-            : activities.length >= 1 ?
-              activities?.map((act) => (
+            : activities.length ?
+              activities.map((act) => (
               <div key={act.id} className={Styles.activities_shortCardContainer}>
                 <div className={Styles.activities_shortCard}>
                   <div className={Styles.activities_title}>

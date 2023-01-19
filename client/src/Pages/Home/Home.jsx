@@ -73,6 +73,8 @@ Home - Paginado:     que marque la Current Page!
 
 Actividades:         UPDATE
                      UPDATE - RESPONSIVE
+                     REVISAR TODO DE NUEVO, LCDLL
+                     ACTUALIZACIÓN DE ESTADO CUANDO BORRÁS O EDITAS UNA CARD
 Create Activities:   RESPONSIVE
-About:               TODO
+About:               CASI TODO
 */

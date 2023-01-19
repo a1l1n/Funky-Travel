@@ -34,10 +34,9 @@
 .actfilters_modal_button {
     width: 300px;
     height: 100px;
-    visibility: hidden;
 } 
 
-.actfilters_close_modal_button {
+.actfilters_close_modal_button, .actfilters_modal_button {
     visibility: hidden;
 }
 
