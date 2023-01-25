@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import { filterByContinent, sortByName, sortByPopulation, getAllCountries, getActivity } from "../../Redux/Actions";
+import { filterByContinent, sortByName, sortByPopulation, getAllCountries, getActivity, resetFilter } from "../../Redux/Actions";
 import { SearchBar } from '../SeachBar/SearchBar';
 import Styles from "./Filters.module.css";
 /* useEffect: ayuda a escuchar el cambio de variables y a ejecutar código
@@ -10,8 +10,6 @@ export const Filters = () => {
 const dispatch = useDispatch();
 const [ filters, showFilters ] = useState(false)
 const countries = useSelector(state => state.countries);
-
-console.log(filters)
 
 useEffect(() => {
   dispatch(getAllCountries());
@@ -32,6 +30,10 @@ function populationSort(e){
   e.preventDefault();
   dispatch(sortByPopulation(e.target.value))
 };
+
+function resetHandle() {
+  dispatch(resetFilter())
+}
 
   return (
     <div className={Styles.filtersContainer}>
@@ -65,7 +67,7 @@ function populationSort(e){
           <option value="asc">↑ population</option>
           <option value="desc">↓ population</option>
         </select>
-        <button className={Styles.filters_button}>Clean</button>
+        <button className={Styles.filters_button} onClick={() =>resetHandle()}>Clean</button>
         <div className={Styles.filters_apply_button}>
           <button onClick={() => showFilters(false)}>Apply</button>
         </div>

@@ -18,6 +18,7 @@
     margin-bottom: 2em;
     background-color: rgba(255, 255, 255, 0.466);
     border: 1px solid rgb(207, 207, 207);
+    transition: 0.3s;
 }
 
 .actLeft, .actRight {
@@ -30,7 +31,7 @@
     width: 60%;
     margin-left: 2em;
     background-color: rgba(255, 255, 255, 0.815);
-    
+    padding-right: 2em;
 }
 
 .actLeft h1 {
@@ -41,7 +42,7 @@
 }
 
 .actRight {
-    width: 33%;
+    width: 30%;
     background-image: url("../../Images/Stamps.jpg");
     opacity: 0.6;
     background-size: cover;
@@ -126,3 +127,180 @@
     position: relative;
     z-index: 2;
 }
+
+/* RESPONSIVE ------------------------------------------------------------------- */
+@media screen and (max-width: 1300px) {/*  -------------------------------------- */
+    .actRight {
+        margin-right: 2em;
+    }
+
+    .actButton {
+        top: 4em
+    }
+}
+
+@media screen and (max-width: 1150px) {/* --------------------------------------- */
+    .actContainer {
+        width: 80%;
+    }
+    
+    .actLeft {
+        margin-left: 2em;
+        padding-right: 2em;
+    }
+
+    .actActivity, .actDificulty, .actDuration, .actSeason, .actCountry, .actCalendar {
+        display: flex;
+        flex-direction: row;
+        margin-left: 2em;
+        margin-top: 1.5em;
+    }
+
+    .actLeft h1 {
+        margin-bottom: 1.5em;
+        color: rgba(9, 47, 117, 0.815); 
+    }
+}
+
+@media screen and (max-width: 850px) {/* --------------------------------------- */
+    .actLeft {
+        width: 90%;
+        height: 90%;
+        padding-right: 1em;
+    }
+}
+
+@media screen and (max-width: 650px) {/* ---------------------------- */
+    .actActivity, .actDificulty, .actDuration, .actSeason, .actCountry, .actCalendar {
+        margin: 1.5em 1em;
+        padding-right: 0.5em;
+    }
+
+    .actLeft h1 {
+        margin-left: 1.5em;
+    }
+
+    .actH1 {
+        font-size: 14px;
+    }
+
+    .actLabel {
+        width: 60px;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+
+    .actLabel label {
+        margin-right: 2em;
+    }
+
+    .actInput {
+        width: 50%;
+    }
+
+    .actButton {
+        top: 3em;
+        left: 25%;
+    }
+}
+
+@media screen and (max-width: 550px) {/* ---------------------------------------- */
+    .actBody {
+        height: 1200px;
+    } 
+
+    .actContainer {
+        width: 90%;
+        height: 1150px;
+        margin: 2em auto;
+        flex-direction: column;
+    }
+
+    .actLeft {
+        width: 90%;
+        height: 90%;
+        margin: 2em 1em;
+        padding-bottom: 2.5em;
+    }
+    
+    .actActivity, .actDificulty, .actDuration, .actSeason, .actCountry, .actCalendar {
+        display: flex;
+        flex-direction: column;
+        margin: 2em 3em;
+    }
+
+    .actH1 {
+        background-image: url("../../Images/Stamps.jpg");
+        background-size: cover; 
+        background-position: bottom;
+        height: 120px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .actLeft h1 {
+        font-size: 30px;
+        font-weight: 900;  
+        padding: 1.5em 0;     
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.74);
+    }
+
+    .actLabel {
+        margin-bottom: 2em;
+        margin-left: 0;
+        margin-right: 2em;
+        text-align: left;
+        width: 60vw;
+        background-color: rgba(9, 47, 117, 0.103); ;
+    }
+
+    .actInput {
+        width: 55vw;
+        margin: auto;
+    }
+ 
+    .actRight {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 360px) {/* ---------------------------------------- */
+    .actBody {
+        height: 1200px;
+    }
+
+    .actContainer {
+        width: 90%;
+        height: 1120px;
+        margin: 2em auto;
+        flex-direction: column;
+    }
+
+    .actRight {
+        display: none;
+    }
+
+    .actLeft h1 {
+        padding: 0.7em 0;   
+    }
+
+    .actActivity, .actDificulty, .actDuration, .actSeason, .actCountry, .actCalendar {
+        flex-direction: column;
+        margin: 2em 3em;
+        font-size: 15px;
+    }
+
+    .actInput {
+        width: 200px;
+    }
+
+    .actButton {
+        top: 3em;
+        left: 15%;
+    } 
+}
+

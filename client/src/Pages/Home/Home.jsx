@@ -65,16 +65,12 @@ export const Home = () => {
 
 /*
 COSAS QUE ME FALTAN TERMINAR DE HACER
--------------------------------------
-Home - Filtros:      clearButton
-                     RESPONSIVE
+-------------------------------------x|
 Home - Paginado:     que marque la Current Page!
                      cuando buscás un país, que automáticamente se renderice la página 1
 
 Actividades:         UPDATE
                      UPDATE - RESPONSIVE
-                     REVISAR TODO DE NUEVO, LCDLL
                      ACTUALIZACIÓN DE ESTADO CUANDO BORRÁS O EDITAS UNA CARD
-Create Activities:   RESPONSIVE
 About:               CASI TODO
 */

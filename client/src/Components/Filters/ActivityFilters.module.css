@@ -40,6 +40,22 @@
     visibility: hidden;
 }
 
+.filters_reset_button {
+    height: 2em;
+    width: 6em;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.74);
+    color: white;
+    font-weight: 520;
+    cursor: pointer;
+    margin-bottom: 2em 0;
+}
+
+.filters_reset_button:hover {
+    background-color: black;
+}
+
 /* RESPONSIVE -------------------------------------------------------------- */
 @media screen and (max-width: 1160px) {
     .filtersContainer, .filters_selects {
@@ -54,6 +70,14 @@
 
     .actFilters_order_one {
         padding-bottom: 0.28em;
+    }
+
+    .actFilters_order_two h3 {
+        padding-top: 3.3em;
+    }
+    
+    .actFilters_order_two select {
+        margin-bottom: 1.5em;
     }
 
     .actFilters_sort {
@@ -72,6 +96,10 @@
     .actFilters_alpha_h3 {
         padding-top: 0.1em;
         margin: 0;
+    }
+
+    .filters_reset_button {
+        margin-bottom: 1.5em;
     }
 }
 
@@ -111,8 +139,15 @@
     }
     
     .filters_selects_modal button {
-        margin-top: 3em;
+        margin-top: 1em;
         visibility: visible;
+    }
+
+    .filters_reset_button {
+        width: 11em;
+        height: 2em;
+        margin-bottom: 0;
+        margin-top: 2em;
     }
 
     .filters_selects_modal {
@@ -132,6 +167,15 @@
         justify-content: center;
         height: 12em; 
         font-size: 15px;
+        padding: 0;
+    }
+
+    .actFilters_order_two h3 {
+        padding-top: 0;
+    }
+
+    .actFilters_order_two select {
+        margin-bottom: 0;
     }
     
     .actFilters_order_h3, .actFilters_alpha_h3 {
@@ -144,7 +188,7 @@
     .actFilters_sort {
         flex-direction: column;
         margin: auto;
-        height: 12em;
+        height: 11em;
     }
     
     .actFilters_sort select{

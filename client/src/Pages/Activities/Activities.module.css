@@ -29,6 +29,8 @@
 }
 
 .activities_shortCard_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     width: 80vw;
     height: 40vh;
     gap: 10px;
@@ -39,8 +41,6 @@
 } 
 
 .activities_shortCardContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
     background-color:rgba(255, 255, 255, 0.39);
     width: 250px;
     height: 280px;
@@ -126,21 +126,21 @@
 
 /* RESPONSIVE ----------------------------------------------------------- */
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {/*  ------------------------------- */
     .activities_shortCard_container {
         grid-template-columns: repeat(4, 1fr);
         width: 90vw;
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {/*  -------------------------------- */
     .activities_shortCard_container {
         grid-template-columns: repeat(3, 1fr);
         width: 90vw;
     }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 860px) {/* ---------------------------------- */
     .activities_shortCard_container {
         grid-template-columns: repeat(2, 1fr);
         width: 90vw;
@@ -158,7 +158,7 @@
     }
 } 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {/* ------------------------------------ */
     .activities_shortCard_container {
         display: flex;
         flex-direction: column;
@@ -166,7 +166,7 @@
         align-items: center;
         height: 100%;
         gap: 1em;
-        margin: 1em auto
+        margin: 10em auto
     }
 
     .activities_no_act {

@@ -21,10 +21,10 @@ import {
 
 
 const initialState = {
-    countries: [],
     countryDetail: {},
-    filteredCountries: [],
+    countries: [],
     activities: [],
+    filteredCountries: [],
     filteredActivities: [],
     countriesActivities: [],
 }
@@ -135,7 +135,7 @@ export default function reducer(state = initialState, actions){
             })
         return {
             ...state,
-            filteredActivities: [...sortedActivities]  
+            filteredActivities: actions.payload  === "all" ? filtered : [...sortedActivities]  
         };
 
         case ACT_COUNT_ORDER_A_Z: 
@@ -187,12 +187,13 @@ export default function reducer(state = initialState, actions){
             filteredActivities: [...sortedDates]
         }
         //---------------------------------------------------------------------    
-/*         case RESET_FILTER:
+         case RESET_FILTER:
+             console.log("Entramos al reset-filter y esto es state", state)
             return{
                 ...state,
-                continentFilter: null,
-                activityFilter: null
-            } */
+                filteredCountries: [],
+                filteredActivities: []
+            } 
         
         default: return state;
     }

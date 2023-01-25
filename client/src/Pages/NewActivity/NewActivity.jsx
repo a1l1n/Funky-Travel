@@ -80,7 +80,7 @@ export const NewActivity = () => {
       
         <div className={Style.actContainer}>
             <div className={Style.actLeft}>
-              <div><h1> Create a new Activity</h1><div>
+              <div className={Style.actH1}><h1> Create a new Activity</h1><div>
               <form onSubmit={ (e) => handleOnSubmit(e)}>
                 <div className={Style.actActivity}>
                   <div className={Style.actLabel}>
@@ -121,7 +121,7 @@ export const NewActivity = () => {
                   5 </label>
                 </div>
 
-      {/* AVERIGUAR CÓMO AGREGAR NUMEROS DE TIPO HORARIO ------------------------------------------------------------------------------- */}
+      {/*  ------------------------------------------------------------------------------------------------------------------------------ */}
                 <div className={Style.actDuration}>
                   <div className={Style.actLabel}>
                     <label form='duration'>Duration: </label>

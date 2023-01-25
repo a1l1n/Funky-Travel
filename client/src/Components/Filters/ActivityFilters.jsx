@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { activitySortByName, activitiesBySeason, countriesSortByName, activitySortDifficulty, activitySortDate } from "../../Redux/Actions";
+import { getActivity, activitySortByName, activitiesBySeason, countriesSortByName, activitySortDifficulty, activitySortDate, resetFilter } from "../../Redux/Actions";
 import Style from "./ActivityFilters.module.css";
 
 export default function ActivityFilters() {
     const dispatch = useDispatch();
     const [ modal, setModal ] = useState(false);
+
+    useEffect(() => {
+/*         dispatch(getAllCountries()); */
+        dispatch(getActivity());
+      }, [dispatch])
 
     function activitiesHandleSort(e) {
         e.preventDefault();
@@ -37,6 +42,10 @@ export default function ActivityFilters() {
         setModal(state);
     }
 
+    function resetHandle() {
+        dispatch(resetFilter())
+    }
+
     return (
         <div className={Style.filtersContainer}> 
             <div className={Style.actfilters_modal_button}>
@@ -48,7 +57,7 @@ export default function ActivityFilters() {
                     <h3 className={Style.actFilters_alpha_h3}>Alphabetical</h3>
                     <div className={Style.actFilters_sort}>
                         <select onChange={(e) => activitiesHandleSort(e)}>
-                            <option value="Activity">Activities</option>
+                            <option value="all">Activities</option>
                             <option value="asc">A to Z</option>
                             <option value="desc">Z to A</option>
                         </select>
@@ -83,8 +92,10 @@ export default function ActivityFilters() {
                             <option value="Winter">Winter</option>
                             <option value="Spring">Spring</option>
                         </select>
+                        <button className={Style.filters_reset_button} onClick={() =>resetHandle()}>Clean</button>
                     </div>
 
+                    
                     <div className={Style.actfilters_close_modal_button}>
                         <button onClick={() => showFilters(false)}>Apply</button>
                     </div>
