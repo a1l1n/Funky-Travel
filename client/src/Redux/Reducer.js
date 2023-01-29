@@ -17,6 +17,7 @@ import {
     ACT_ORDER_DATE,
     RESET_FILTER,
     RESET_ORDERS,
+    CURRENT_PAGE
 } from './Constants';
 
 
@@ -27,6 +28,7 @@ const initialState = {
     filteredCountries: [],
     filteredActivities: [],
     countriesActivities: [],
+    currentPage: 1
 }
 
 // COUNTRIES ACTIONS ----------------------------------------------------------------
@@ -194,6 +196,12 @@ export default function reducer(state = initialState, actions){
                 filteredCountries: [],
                 filteredActivities: []
             } 
+        // PAGINADO -----------------------------------------------------------
+        case CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: actions.payload
+            }
         
         default: return state;
     }

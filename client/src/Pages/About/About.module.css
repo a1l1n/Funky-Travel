@@ -1,0 +1,45 @@
+.aboutCointainer {
+    width: 80%;
+    height: 90vh;
+    background-color: pink;
+    margin: 3em auto;
+    display: flex;
+}
+
+.aboutCointainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about_general, .about_tech {
+    height: 90%;
+    padding: 0 1rem;
+    
+}
+
+.about_general {
+    width: 55%;
+    margin: 2em 0em 0em 2em;
+    background-color: yellow;
+}
+
+.about_features {
+    padding: 0.5em 0em;
+    background-color: aqua;
+}
+
+.about_tech {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    align-items: center;
+    margin: 2em 2em 0em 0em;
+    gap: 1em;
+    background-color: azure;
+}
+
+.about_tech section {
+    height: 250px;
+    text-align: left;
+    background-color: bisque;
+}
+

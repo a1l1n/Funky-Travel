@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8ac3ca14.chunk.css",
+    "main.js": "/static/js/main.c181e1e2.chunk.js",
+    "main.js.map": "/static/js/main.c181e1e2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8b128560.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8b128560.js.map",
+    "static/js/2.3a29a20c.chunk.js": "/static/js/2.3a29a20c.chunk.js",
+    "static/js/2.3a29a20c.chunk.js.map": "/static/js/2.3a29a20c.chunk.js.map",
+    "static/js/3.29e5c06b.chunk.js": "/static/js/3.29e5c06b.chunk.js",
+    "static/js/3.29e5c06b.chunk.js.map": "/static/js/3.29e5c06b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8ac3ca14.chunk.css.map": "/static/css/main.8ac3ca14.chunk.css.map",
+    "static/js/2.3a29a20c.chunk.js.LICENSE.txt": "/static/js/2.3a29a20c.chunk.js.LICENSE.txt",
+    "static/media/LP-Img.a38562b2.jpeg": "/static/media/LP-Img.a38562b2.jpeg",
+    "static/media/App.css": "/static/media/Planisferio.da2c83b6.png",
+    "static/media/NewActivity.module.css": "/static/media/Stamps.bf2a63c4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b128560.js",
+    "static/js/2.3a29a20c.chunk.js",
+    "static/css/main.8ac3ca14.chunk.css",
+    "static/js/main.c181e1e2.chunk.js"
+  ]
+}

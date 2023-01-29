@@ -28,3 +28,7 @@ export const ACT_ORDER_A_Z = "ACT_ORDER_A_Z";
 export const ACT_COUNT_ORDER_A_Z = "ACT_COUNT_ORDER_A_Z";
 export const ACT_ORDER_DIFFICULTY = "ACT_ORDER_DIFFICULTY";
 export const ACT_ORDER_DATE = "ACT_ORDER_DATE";
+
+// Paginado
+export const CURRENT_PAGE = "CURRENT_PAGE";
+

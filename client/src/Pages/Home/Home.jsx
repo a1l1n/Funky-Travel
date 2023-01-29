@@ -9,6 +9,7 @@ import Styles from './Home.module.css';
 export const Home = () => {
     const ctrs = useSelector(state => state.countries);
     const filtereds = useSelector(state => state.filteredCountries);
+    const currentPage = useSelector(state => state.currentPage);
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -18,8 +19,8 @@ export const Home = () => {
 
 // PAGINATION ---------------------------------------------------
 
-    const [page, setPage] = useState(1);
-    const [cardsPerPage] = useState(10);
+    const [page, setPage] = useState(currentPage);
+    const cardsPerPage = 10;
     const totalPages = filtereds.length? Math.ceil(filtereds.length / cardsPerPage) : Math.ceil(ctrs.length / cardsPerPage);
 
 
@@ -69,8 +70,13 @@ COSAS QUE ME FALTAN TERMINAR DE HACER
 Home - Paginado:     que marque la Current Page!
                      cuando buscás un país, que automáticamente se renderice la página 1
 
+DETAIL:             RESPONSIVE, MCELL
+PAGINADO:           RESPONSIVE ASF
+
 Actividades:         UPDATE
                      UPDATE - RESPONSIVE
                      ACTUALIZACIÓN DE ESTADO CUANDO BORRÁS O EDITAS UNA CARD
+                     PAGINADO GENERAL
+                     QUE NO SE PUEDAN RENDERIZAR MÁS DE 4 CARDS EN EL RESPONSIVE
 About:               CASI TODO
 */

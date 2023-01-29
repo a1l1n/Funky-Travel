@@ -16,7 +16,8 @@ import {
     ACT_ORDER_DIFICULTY,
     ACT_ORDER_DATE,
     ACT_COUNT_ORDER_A_Z,
-    ACT_ORDER_DIFFICULTY
+    ACT_ORDER_DIFFICULTY,
+    CURRENT_PAGE
 } from './Constants';
 
 // GET EN COUNTRIES : ALL, DETAIL, ID -------------------------------------------
@@ -188,6 +189,16 @@ export function activitySortDate(payload) {
         payload
     }
 };
+
+// PAGINADO ----------------------------------------------------------------------
+export function setCurrentPage(page) {
+    return function (dispatch) {
+        return dispatch({
+            type: CURRENT_PAGE,
+            payload: page
+        })
+    }
+}
 
 
 
