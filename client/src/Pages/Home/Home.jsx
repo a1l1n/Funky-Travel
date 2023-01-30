@@ -78,5 +78,4 @@ Actividades:         UPDATE
                      ACTUALIZACIÓN DE ESTADO CUANDO BORRÁS O EDITAS UNA CARD
                      PAGINADO GENERAL
                      QUE NO SE PUEDAN RENDERIZAR MÁS DE 4 CARDS EN EL RESPONSIVE
-About:               CASI TODO
 */
