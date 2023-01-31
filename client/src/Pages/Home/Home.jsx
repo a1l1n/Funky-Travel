@@ -69,8 +69,6 @@ COSAS QUE ME FALTAN TERMINAR DE HACER
 -------------------------------------x|
 Home - Paginado:     que marque la Current Page!
                      cuando buscás un país, que automáticamente se renderice la página 1
-
-DETAIL:             RESPONSIVE, MCELL
 PAGINADO:           RESPONSIVE ASF
 
 Actividades:         UPDATE

@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import Styles from "./Card.module.css";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { IoIosArrowBack } from "react-icons/io";
-import convert from "../Functions";
-
 
 export const Card = ({ id }) => {
   const country = useSelector(state => state.countryDetail);
@@ -32,7 +30,7 @@ export const Card = ({ id }) => {
                 <span><div className={Styles.cardInfoDiv}><h3>Area (km2)</h3></div>{country.area?.toLocaleString()}</span> 
                 <span><div className={Styles.cardInfoDiv}><h3>Population</h3></div>{country.population?.toLocaleString()}</span>
               </div>
-              <a className={Styles.cardInfoLink} href={`https://en.wikipedia.org/wiki/${country.name}`}target="_blank"><AiOutlinePlusCircle className={Styles.cardIcon}/> Info</a>
+              <a className={Styles.cardInfoLink} href={`https://en.wikipedia.org/wiki/${country.name}`} target="_blank"><AiOutlinePlusCircle className={Styles.cardIcon}/> Info</a>
             </div>
           </div>
 

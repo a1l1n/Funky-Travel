@@ -14,6 +14,7 @@
     margin-bottom: 2em;
     background-color: rgba(255, 255, 255, 0.466);
     border: 1px solid rgb(207, 207, 207);
+    transition: 0.4s;
 }
  
 /* TOP - HALF ------------------------------------------------- */
@@ -86,7 +87,6 @@
 }
 
 .cardInformationSpans {
-    width: 45%;
     margin: 1em auto;
 }
 
@@ -206,6 +206,100 @@
     font-size: 16px;
     color:rgba(5, 45, 114, 0.726);
     margin: 0;
+}
 
+/* RESPONSIVE ---------------------------------------------------- */
+@media screen and (max-width: 1300px) {
+    .cardContainer {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .cardBody {
+        padding-bottom: 2em;
+    }
+
+    .cardContainer {
+        width: 95%;
+    }
+    
+    .cardTopHalf {
+        width: 90%;
+        height: 90%;
+        margin-top: 2em;
+        margin-left: 1.5em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cardContainer {
+        flex-direction: column;
+        width: 90%;
+        height: 1050px;
+        margin-bottom: 0em;
+    }
+
+    .cardTopHalf {
+        height: 60%;
+    }
+
+    .cardRigth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+        width: 87%;
+        margin: 0 auto 2em auto;
+    }
+
+    .cardActivities {
+        margin-top: 2em;
+    }
 }
  
+@media screen and (max-width: 600px) {
+    .cardText {
+        width: 100%;
+    }
+
+    .cardInformationSpans {
+        margin: 1em auto;
+    }
+
+    .cardInformationImage {
+        gap: 15px;
+    }
+
+    .cardInformationTitle img {
+        height: 5em;
+    }
+
+    .cardInformationTitle {
+        margin-left: 20px;
+    }
+
+    .cardInformationTitle h2 {
+        font-size: 24px;
+    }
+
+    .cardInformationTitle h3 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .cardInformationImage {
+        flex-direction: column;
+        height: 40%;
+        text-align: center;
+    }
+
+    .cardInformationTitle {
+        margin: 0;
+    }
+
+    .cardInfoDiv {
+        min-width: 120px;
+    }
+}
