@@ -19,7 +19,7 @@ export const Home = () => {
 
 // PAGINATION ---------------------------------------------------
 
-    const [page, setPage] = useState(currentPage);
+    const [page, setPage] = useState(1);
     const cardsPerPage = 10;
     const totalPages = filtereds.length? Math.ceil(filtereds.length / cardsPerPage) : Math.ceil(ctrs.length / cardsPerPage);
 
@@ -66,8 +66,7 @@ export const Home = () => {
 
 /*
 COSAS QUE ME FALTAN TERMINAR DE HACER
--------------------------------------x|
-Home - Paginado:     que marque la Current Page!
+-------------------------------------x
                      cuando buscás un país, que automáticamente se renderice la página 1
 PAGINADO:           RESPONSIVE ASF
 

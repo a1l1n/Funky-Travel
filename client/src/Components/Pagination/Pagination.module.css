@@ -1,30 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
 .paginationContainer {
   display: flex;
-  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
   height: 2em;
-  justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Sora', sans-serif;
 }
 
-.paginationNumber,  .paginationPrev, .paginationNext {
-  color: black;
-  float: left;
-  text-decoration: none;
+.pagination_p {
+  color: rgba(95, 94, 94, 0.76);
+}
+
+.pagination_button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
   border: none;
-  font-size: 15px;
+  font-size: 18px;
   cursor: pointer;
-  background-color: white;
 }
 
-.paginationNumber:hover, .paginationPrev:hover, .paginationNext:hover {
-  color: white;
-  background-color: rgba(8, 46, 117, 0.733);
+.pagination_button:hover {
+  color: rgb(87, 165, 230);
 }
 
-.paginationPrev, .paginationNext {
-  width: 6em;
+.pagination_input {
+  width: 50px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+  text-align: center;
+  outline: none;
+  color: rgba(8, 46, 117, 0.733);
+/*   color: rgba(9, 47, 117, 0.815); */
 }
+
 
 
 
